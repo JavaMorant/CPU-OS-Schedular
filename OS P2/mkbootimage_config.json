@@ -1,0 +1,9 @@
+{
+    "diskguid": "00000000-0000-0000-0000-000000000000",
+    "disksize": 128,
+    "config": "build/initrd/sys/config",
+    "initrd": { "type": "tar", "directory": "build/initrd" },
+    "partitions": [
+        { "type": "fat32", "size": 16 }
+    ]
+}

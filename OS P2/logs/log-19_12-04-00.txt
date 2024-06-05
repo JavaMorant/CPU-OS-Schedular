@@ -1,0 +1,47 @@
+Booting OS...
+ * Detecting CPU
+ * Enabling A20
+ * E820 Memory Map
+ * System tables
+ * System time
+ * Reading GPT
+ * Initrd loaded
+ * Gzip compressed initrd
+ * Environment
+ * Parsing ELF64
+ * Screen VESA VBE
+========== Oink OS v1.1 ==========
+Waking pid 1
+=== schedule pid 1 (init init)
+[000765918] PID 01 (init init) syscall write(...)
+Priority scheduling test started
+[000766455] PID 01 (init init) syscall spawn("init", "high_priority_process")
+[000766897] PID 01 (init init) Waking pid 2
+[000767131] PID 01 (init init) Waking pid 1
+[000767395] PID 01 (init init) syscall spawn("init", "medium_priority_process")
+[000767758] PID 01 (init init) Waking pid 3
+[000771911] PID 01 (init init) syscall spawn("init", "low_priority_process")
+[000772258] PID 01 (init init) Waking pid 4
+[000772506] PID 01 (init init) syscall exit()
+[000772741] PID 01 (init init) thread stopped
+$$ timeslice summary for pid 1 (init init) : queued at 764522, ran at 764607, ended at 772988
+=== schedule pid 2 (init high_priority_process)
+[000791534] PID 02 (init high_priority_process) syscall write(...)
+High priority process completed
+[000792055] PID 02 (init high_priority_process) syscall exit()
+[000792300] PID 02 (init high_priority_process) thread stopped
+$$ timeslice summary for pid 2 (init high_priority_process) : queued at 767106, ran at 773435, ended at 792544
+=== schedule pid 3 (init medium_priority_process)
+[000811009] PID 03 (init medium_priority_process) syscall write(...)
+Medium priority process completed
+[000811488] PID 03 (init medium_priority_process) syscall exit()
+[000811738] PID 03 (init medium_priority_process) thread stopped
+$$ timeslice summary for pid 3 (init medium_priority_process) : queued at 771883, ran at 792919, ended at 811988
+=== schedule pid 4 (init low_priority_process)
+[000830461] PID 04 (init low_priority_process) syscall write(...)
+Low priority process completed
+[000830908] PID 04 (init low_priority_process) syscall exit()
+[000831168] PID 04 (init low_priority_process) thread stopped
+$$ timeslice summary for pid 4 (init low_priority_process) : queued at 772454, ran at 812381, ended at 831410
+
+#### All Processes Stopped ####

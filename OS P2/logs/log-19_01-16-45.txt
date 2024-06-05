@@ -1,0 +1,189 @@
+Booting OS...
+ * Detecting CPU
+ * Enabling A20
+ * E820 Memory Map
+ * System tables
+ * System time
+ * Reading GPT
+ * Initrd loaded
+ * Gzip compressed initrd
+ * Environment
+ * Parsing ELF64
+ * Screen VESA VBE
+========== Oink OS v1.1 ==========
+Waking pid 1
+=== schedule pid 1 (init init)
+[000754471] PID 01 (init init) syscall write(...)
+Batch processing simulation started
+[000760040] PID 01 (init init) time slice expired, scheduling soon
+[000760437] PID 01 (init init) Waking pid 1
+[000760742] PID 01 (init init) syscall spawn("init", "batch_process_1")
+[000761093] PID 01 (init init) Waking pid 2
+[000761313] PID 01 (init init) Waking pid 1
+$$ timeslice summary for pid 1 (init init) : queued at 752899, ran at 752988, ended at 761312
+=== schedule pid 2 (init batch_process_1)
+[000763588] PID 02 (init batch_process_1) time slice expired, scheduling soon
+[000763877] PID 02 (init batch_process_1) Waking pid 2
+$$ timeslice summary for pid 2 (init batch_process_1) : queued at 761310, ran at 761312, ended at 763877
+=== schedule pid 1 (init init)
+[000764653] PID 01 (init init) syscall spawn("init", "batch_process_2")
+[000764994] PID 01 (init init) Waking pid 3
+[000765199] PID 01 (init init) syscall spawn("init", "batch_process_3")
+[000765539] PID 01 (init init) Waking pid 4
+[000765824] PID 01 (init init) syscall exit()
+[000766064] PID 01 (init init) thread stopped
+$$ timeslice summary for pid 1 (init init) : queued at 761507, ran at 763877, ended at 766319
+=== schedule pid 2 (init batch_process_1)
+[000768776] PID 02 (init batch_process_1) time slice expired, scheduling soon
+[000769075] PID 02 (init batch_process_1) Waking pid 2
+$$ timeslice summary for pid 2 (init batch_process_1) : queued at 764100, ran at 766752, ended at 769075
+=== schedule pid 3 (init batch_process_2)
+[000771687] PID 03 (init batch_process_2) time slice expired, scheduling soon
+[000771986] PID 03 (init batch_process_2) Waking pid 3
+$$ timeslice summary for pid 3 (init batch_process_2) : queued at 765193, ran at 769075, ended at 771985
+=== schedule pid 4 (init batch_process_3)
+[000774266] PID 04 (init batch_process_3) time slice expired, scheduling soon
+[000774587] PID 04 (init batch_process_3) Waking pid 4
+$$ timeslice summary for pid 4 (init batch_process_3) : queued at 765769, ran at 771985, ended at 774587
+=== schedule pid 2 (init batch_process_1)
+[000776858] PID 02 (init batch_process_1) time slice expired, scheduling soon
+[000777143] PID 02 (init batch_process_1) Waking pid 2
+$$ timeslice summary for pid 2 (init batch_process_1) : queued at 769301, ran at 774587, ended at 777143
+=== schedule pid 3 (init batch_process_2)
+[000779402] PID 03 (init batch_process_2) time slice expired, scheduling soon
+[000779786] PID 03 (init batch_process_2) Waking pid 3
+$$ timeslice summary for pid 3 (init batch_process_2) : queued at 772219, ran at 777143, ended at 779786
+=== schedule pid 4 (init batch_process_3)
+[000782062] PID 04 (init batch_process_3) time slice expired, scheduling soon
+[000782356] PID 04 (init batch_process_3) Waking pid 4
+$$ timeslice summary for pid 4 (init batch_process_3) : queued at 774812, ran at 779786, ended at 782356
+=== schedule pid 2 (init batch_process_1)
+[000784611] PID 02 (init batch_process_1) time slice expired, scheduling soon
+[000784922] PID 02 (init batch_process_1) Waking pid 2
+$$ timeslice summary for pid 2 (init batch_process_1) : queued at 777368, ran at 782356, ended at 784922
+=== schedule pid 3 (init batch_process_2)
+[000788742] PID 03 (init batch_process_2) time slice expired, scheduling soon
+[000789033] PID 03 (init batch_process_2) Waking pid 3
+$$ timeslice summary for pid 3 (init batch_process_2) : queued at 780026, ran at 784922, ended at 789033
+=== schedule pid 4 (init batch_process_3)
+[000791295] PID 04 (init batch_process_3) time slice expired, scheduling soon
+[000791581] PID 04 (init batch_process_3) Waking pid 4
+$$ timeslice summary for pid 4 (init batch_process_3) : queued at 782579, ran at 789033, ended at 791581
+=== schedule pid 2 (init batch_process_1)
+[000793852] PID 02 (init batch_process_1) time slice expired, scheduling soon
+[000794139] PID 02 (init batch_process_1) Waking pid 2
+$$ timeslice summary for pid 2 (init batch_process_1) : queued at 785144, ran at 791581, ended at 794139
+=== schedule pid 3 (init batch_process_2)
+[000796410] PID 03 (init batch_process_2) time slice expired, scheduling soon
+[000796742] PID 03 (init batch_process_2) Waking pid 3
+$$ timeslice summary for pid 3 (init batch_process_2) : queued at 789262, ran at 794139, ended at 796742
+=== schedule pid 4 (init batch_process_3)
+[000798991] PID 04 (init batch_process_3) time slice expired, scheduling soon
+[000799293] PID 04 (init batch_process_3) Waking pid 4
+$$ timeslice summary for pid 4 (init batch_process_3) : queued at 791805, ran at 796742, ended at 799293
+=== schedule pid 2 (init batch_process_1)
+[000801541] PID 02 (init batch_process_1) time slice expired, scheduling soon
+[000801836] PID 02 (init batch_process_1) Waking pid 2
+$$ timeslice summary for pid 2 (init batch_process_1) : queued at 794386, ran at 799293, ended at 801836
+=== schedule pid 3 (init batch_process_2)
+[000804277] PID 03 (init batch_process_2) time slice expired, scheduling soon
+[000804566] PID 03 (init batch_process_2) Waking pid 3
+$$ timeslice summary for pid 3 (init batch_process_2) : queued at 796966, ran at 801836, ended at 804565
+=== schedule pid 4 (init batch_process_3)
+[000806838] PID 04 (init batch_process_3) time slice expired, scheduling soon
+[000807150] PID 04 (init batch_process_3) Waking pid 4
+$$ timeslice summary for pid 4 (init batch_process_3) : queued at 799517, ran at 804565, ended at 807150
+=== schedule pid 2 (init batch_process_1)
+[000809426] PID 02 (init batch_process_1) time slice expired, scheduling soon
+[000809709] PID 02 (init batch_process_1) Waking pid 2
+$$ timeslice summary for pid 2 (init batch_process_1) : queued at 802061, ran at 807150, ended at 809709
+=== schedule pid 3 (init batch_process_2)
+[000811968] PID 03 (init batch_process_2) time slice expired, scheduling soon
+[000812252] PID 03 (init batch_process_2) Waking pid 3
+$$ timeslice summary for pid 3 (init batch_process_2) : queued at 804789, ran at 809709, ended at 812252
+=== schedule pid 4 (init batch_process_3)
+[000814531] PID 04 (init batch_process_3) time slice expired, scheduling soon
+[000814815] PID 04 (init batch_process_3) Waking pid 4
+$$ timeslice summary for pid 4 (init batch_process_3) : queued at 807377, ran at 812252, ended at 814815
+=== schedule pid 2 (init batch_process_1)
+[000817072] PID 02 (init batch_process_1) time slice expired, scheduling soon
+[000817388] PID 02 (init batch_process_1) Waking pid 2
+$$ timeslice summary for pid 2 (init batch_process_1) : queued at 809931, ran at 814815, ended at 817388
+=== schedule pid 3 (init batch_process_2)
+[000819635] PID 03 (init batch_process_2) time slice expired, scheduling soon
+[000819945] PID 03 (init batch_process_2) Waking pid 3
+$$ timeslice summary for pid 3 (init batch_process_2) : queued at 812492, ran at 817388, ended at 819945
+=== schedule pid 4 (init batch_process_3)
+[000822203] PID 04 (init batch_process_3) time slice expired, scheduling soon
+[000822502] PID 04 (init batch_process_3) Waking pid 4
+$$ timeslice summary for pid 4 (init batch_process_3) : queued at 815037, ran at 819945, ended at 822502
+=== schedule pid 2 (init batch_process_1)
+[000824772] PID 02 (init batch_process_1) time slice expired, scheduling soon
+[000825088] PID 02 (init batch_process_1) Waking pid 2
+$$ timeslice summary for pid 2 (init batch_process_1) : queued at 817611, ran at 822502, ended at 825087
+=== schedule pid 3 (init batch_process_2)
+[000827345] PID 03 (init batch_process_2) time slice expired, scheduling soon
+[000827658] PID 03 (init batch_process_2) Waking pid 3
+$$ timeslice summary for pid 3 (init batch_process_2) : queued at 820170, ran at 825087, ended at 827658
+=== schedule pid 4 (init batch_process_3)
+[000829908] PID 04 (init batch_process_3) time slice expired, scheduling soon
+[000830209] PID 04 (init batch_process_3) Waking pid 4
+$$ timeslice summary for pid 4 (init batch_process_3) : queued at 822727, ran at 827658, ended at 830208
+=== schedule pid 2 (init batch_process_1)
+[000832459] PID 02 (init batch_process_1) time slice expired, scheduling soon
+[000832758] PID 02 (init batch_process_1) Waking pid 2
+$$ timeslice summary for pid 2 (init batch_process_1) : queued at 825316, ran at 830208, ended at 832758
+=== schedule pid 3 (init batch_process_2)
+[000834995] PID 03 (init batch_process_2) time slice expired, scheduling soon
+[000835284] PID 03 (init batch_process_2) Waking pid 3
+$$ timeslice summary for pid 3 (init batch_process_2) : queued at 827883, ran at 832758, ended at 835284
+=== schedule pid 4 (init batch_process_3)
+[000837533] PID 04 (init batch_process_3) time slice expired, scheduling soon
+[000837855] PID 04 (init batch_process_3) Waking pid 4
+$$ timeslice summary for pid 4 (init batch_process_3) : queued at 830435, ran at 835284, ended at 837854
+=== schedule pid 2 (init batch_process_1)
+[000840117] PID 02 (init batch_process_1) time slice expired, scheduling soon
+[000840404] PID 02 (init batch_process_1) Waking pid 2
+$$ timeslice summary for pid 2 (init batch_process_1) : queued at 832980, ran at 837854, ended at 840404
+=== schedule pid 3 (init batch_process_2)
+[000842654] PID 03 (init batch_process_2) time slice expired, scheduling soon
+[000842939] PID 03 (init batch_process_2) Waking pid 3
+$$ timeslice summary for pid 3 (init batch_process_2) : queued at 835513, ran at 840404, ended at 842939
+=== schedule pid 4 (init batch_process_3)
+[000845206] PID 04 (init batch_process_3) time slice expired, scheduling soon
+[000845490] PID 04 (init batch_process_3) Waking pid 4
+$$ timeslice summary for pid 4 (init batch_process_3) : queued at 838081, ran at 842939, ended at 845490
+=== schedule pid 2 (init batch_process_1)
+[000847737] PID 02 (init batch_process_1) time slice expired, scheduling soon
+[000848046] PID 02 (init batch_process_1) Waking pid 2
+$$ timeslice summary for pid 2 (init batch_process_1) : queued at 840628, ran at 845490, ended at 848046
+=== schedule pid 3 (init batch_process_2)
+[000850173] PID 03 (init batch_process_2) syscall write(...)
+Batch process 2 completed
+[000850572] PID 03 (init batch_process_2) time slice expired, scheduling soon
+[000850890] PID 03 (init batch_process_2) Waking pid 3
+$$ timeslice summary for pid 3 (init batch_process_2) : queued at 843180, ran at 848046, ended at 850890
+=== schedule pid 4 (init batch_process_3)
+[000853142] PID 04 (init batch_process_3) time slice expired, scheduling soon
+[000853427] PID 04 (init batch_process_3) Waking pid 4
+$$ timeslice summary for pid 4 (init batch_process_3) : queued at 845712, ran at 850890, ended at 853427
+=== schedule pid 2 (init batch_process_1)
+[000855115] PID 02 (init batch_process_1) syscall write(...)
+Batch process 1 completed
+[000855567] PID 02 (init batch_process_1) syscall exit()
+[000855819] PID 02 (init batch_process_1) thread stopped
+$$ timeslice summary for pid 2 (init batch_process_1) : queued at 848269, ran at 853427, ended at 856048
+=== schedule pid 3 (init batch_process_2)
+[000856650] PID 03 (init batch_process_2) syscall exit()
+[000856883] PID 03 (init batch_process_2) thread stopped
+$$ timeslice summary for pid 3 (init batch_process_2) : queued at 851117, ran at 856411, ended at 857126
+=== schedule pid 4 (init batch_process_3)
+[000859536] PID 04 (init batch_process_3) time slice expired, scheduling soon
+[000859823] PID 04 (init batch_process_3) Waking pid 4
+[000860834] PID 04 (init batch_process_3) syscall write(...)
+Batch process 3 completed
+[000861241] PID 04 (init batch_process_3) syscall exit()
+[000861472] PID 04 (init batch_process_3) thread stopped
+$$ timeslice summary for pid 4 (init batch_process_3) : queued at 853651, ran at 857502, ended at 861700
+
+#### All Processes Stopped ####

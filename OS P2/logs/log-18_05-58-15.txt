@@ -1,0 +1,1190 @@
+Booting OS...
+ * Detecting CPU
+ * Enabling A20
+ * E820 Memory Map
+ * System tables
+ * System time
+ * Reading GPT
+ * Initrd loaded
+ * Gzip compressed initrd
+ * Environment
+ * Parsing ELF64
+ * Screen VESA VBE
+========== Oink OS v1.1 ==========
+Waking pid 1
+=== schedule pid 1 (init init)
+[000932449] PID 01 (init init) syscall write(...)
+I am init
+[000933236] PID 01 (init init) syscall spawn("init", "batch")
+[000933848] PID 01 (init init) Waking pid 2
+[000934302] PID 01 (init init) Waking pid 1
+$$ timeslice summary for pid 1 (init init) : queued at 930591, ran at 930687, ended at 934287
+=== schedule pid 2 (init batch)
+[000938868] PID 02 (init batch) time slice expired, scheduling soon
+[000941649] PID 02 (init batch) Waking pid 2
+$$ timeslice summary for pid 2 (init batch) : queued at 934277, ran at 934287, ended at 941647
+=== schedule pid 1 (init init)
+[000943213] PID 01 (init init) syscall spawn("init", "interactive")
+[000943861] PID 01 (init init) Waking pid 3
+[000944255] PID 01 (init init) syscall spawn("init", "short_sleep")
+[000944923] PID 01 (init init) Waking pid 4
+[000945334] PID 01 (init init) syscall spawn("init", "burst")
+[000945947] PID 01 (init init) Waking pid 5
+[000946422] PID 01 (init init) time slice expired, scheduling soon
+[000946959] PID 01 (init init) Waking pid 1
+$$ timeslice summary for pid 1 (init init) : queued at 934688, ran at 941647, ended at 946958
+=== schedule pid 2 (init batch)
+[000951473] PID 02 (init batch) time slice expired, scheduling soon
+[000952076] PID 02 (init batch) Waking pid 2
+$$ timeslice summary for pid 2 (init batch) : queued at 942070, ran at 946958, ended at 952075
+=== schedule pid 3 (init interactive)
+[000954145] PID 03 (init interactive) syscall sleep(100000)
+[000954679] PID 03 (init interactive) sleeping until 1054660
+$$ timeslice summary for pid 3 (init interactive) : queued at 944241, ran at 952075, ended at 955244
+=== schedule pid 4 (init short_sleep)
+[000958087] PID 04 (init short_sleep) syscall sleep(1)
+[000958595] PID 04 (init short_sleep) sleeping until 958595
+$$ timeslice summary for pid 4 (init short_sleep) : queued at 945313, ran at 955244, ended at 959120
+=== schedule pid 5 (init burst)
+*** timer woke pid 4
+[000961009] PID 05 (init burst) Waking pid 4
+[000963203] PID 05 (init burst) time slice expired, scheduling soon
+[000963800] PID 05 (init burst) Waking pid 5
+$$ timeslice summary for pid 5 (init burst) : queued at 946408, ran at 959120, ended at 963799
+=== schedule pid 1 (init init)
+[000965396] PID 01 (init init) syscall exit()
+[000965877] PID 01 (init init) thread stopped
+$$ timeslice summary for pid 1 (init init) : queued at 947346, ran at 963799, ended at 966349
+=== schedule pid 2 (init batch)
+[000971206] PID 02 (init batch) time slice expired, scheduling soon
+[000971849] PID 02 (init batch) Waking pid 2
+$$ timeslice summary for pid 2 (init batch) : queued at 952700, ran at 967114, ended at 971848
+=== schedule pid 4 (init short_sleep)
+[000974826] PID 04 (init short_sleep) syscall sleep(1)
+[000975299] PID 04 (init short_sleep) sleeping until 975299
+$$ timeslice summary for pid 4 (init short_sleep) : queued at 961430, ran at 971848, ended at 975781
+=== schedule pid 5 (init burst)
+*** timer woke pid 4
+[000977235] PID 05 (init burst) Waking pid 4
+[000979869] PID 05 (init burst) time slice expired, scheduling soon
+[000980463] PID 05 (init burst) Waking pid 5
+$$ timeslice summary for pid 5 (init burst) : queued at 964187, ran at 975781, ended at 980463
+=== schedule pid 2 (init batch)
+[000984951] PID 02 (init batch) time slice expired, scheduling soon
+[000985474] PID 02 (init batch) Waking pid 2
+$$ timeslice summary for pid 2 (init batch) : queued at 972238, ran at 980463, ended at 985474
+=== schedule pid 4 (init short_sleep)
+[000986965] PID 04 (init short_sleep) syscall sleep(1)
+[000987434] PID 04 (init short_sleep) sleeping until 987435
+$$ timeslice summary for pid 4 (init short_sleep) : queued at 977636, ran at 985474, ended at 987920
+=== schedule pid 5 (init burst)
+*** timer woke pid 4
+[000990954] PID 05 (init burst) Waking pid 4
+[000991986] PID 05 (init burst) time slice expired, scheduling soon
+[000992606] PID 05 (init burst) Waking pid 5
+$$ timeslice summary for pid 5 (init burst) : queued at 980879, ran at 987920, ended at 992605
+=== schedule pid 2 (init batch)
+[000997238] PID 02 (init batch) time slice expired, scheduling soon
+[000997800] PID 02 (init batch) Waking pid 2
+$$ timeslice summary for pid 2 (init batch) : queued at 985879, ran at 992605, ended at 997799
+=== schedule pid 4 (init short_sleep)
+[000999282] PID 04 (init short_sleep) syscall sleep(1)
+[000999754] PID 04 (init short_sleep) sleeping until 999755
+$$ timeslice summary for pid 4 (init short_sleep) : queued at 991357, ran at 997799, ended at 1000272
+=== schedule pid 5 (init burst)
+*** timer woke pid 4
+[001001641] PID 05 (init burst) Waking pid 4
+[001004322] PID 05 (init burst) time slice expired, scheduling soon
+[001004841] PID 05 (init burst) Waking pid 5
+$$ timeslice summary for pid 5 (init burst) : queued at 993064, ran at 1000272, ended at 1004841
+=== schedule pid 2 (init batch)
+[001009420] PID 02 (init batch) time slice expired, scheduling soon
+[001010047] PID 02 (init batch) Waking pid 2
+$$ timeslice summary for pid 2 (init batch) : queued at 998255, ran at 1004841, ended at 1010045
+=== schedule pid 4 (init short_sleep)
+[001011579] PID 04 (init short_sleep) syscall sleep(1)
+[001012026] PID 04 (init short_sleep) sleeping until 1012026
+$$ timeslice summary for pid 4 (init short_sleep) : queued at 1002024, ran at 1010045, ended at 1012505
+=== schedule pid 5 (init burst)
+*** timer woke pid 4
+[001014001] PID 05 (init burst) Waking pid 4
+[001016588] PID 05 (init burst) time slice expired, scheduling soon
+[001017126] PID 05 (init burst) Waking pid 5
+$$ timeslice summary for pid 5 (init burst) : queued at 1005270, ran at 1012505, ended at 1017125
+=== schedule pid 2 (init batch)
+[001021648] PID 02 (init batch) time slice expired, scheduling soon
+[001026092] PID 02 (init batch) Waking pid 2
+$$ timeslice summary for pid 2 (init batch) : queued at 1010514, ran at 1017125, ended at 1026089
+=== schedule pid 4 (init short_sleep)
+[001027794] PID 04 (init short_sleep) syscall sleep(1)
+[001028284] PID 04 (init short_sleep) sleeping until 1028284
+$$ timeslice summary for pid 4 (init short_sleep) : queued at 1014387, ran at 1026089, ended at 1028802
+=== schedule pid 5 (init burst)
+*** timer woke pid 4
+[001030252] PID 05 (init burst) Waking pid 4
+[001032840] PID 05 (init burst) time slice expired, scheduling soon
+[001033427] PID 05 (init burst) Waking pid 5
+$$ timeslice summary for pid 5 (init burst) : queued at 1017577, ran at 1028802, ended at 1033427
+=== schedule pid 2 (init batch)
+[001037965] PID 02 (init batch) time slice expired, scheduling soon
+[001038485] PID 02 (init batch) Waking pid 2
+$$ timeslice summary for pid 2 (init batch) : queued at 1026590, ran at 1033427, ended at 1038484
+=== schedule pid 4 (init short_sleep)
+[001041307] PID 04 (init short_sleep) syscall sleep(1)
+[001041809] PID 04 (init short_sleep) sleeping until 1041809
+$$ timeslice summary for pid 4 (init short_sleep) : queued at 1030654, ran at 1038484, ended at 1042317
+=== schedule pid 5 (init burst)
+*** timer woke pid 4
+[001043706] PID 05 (init burst) Waking pid 4
+[001046426] PID 05 (init burst) time slice expired, scheduling soon
+[001047022] PID 05 (init burst) Waking pid 5
+$$ timeslice summary for pid 5 (init burst) : queued at 1033889, ran at 1042317, ended at 1047022
+=== schedule pid 2 (init batch)
+[001051512] PID 02 (init batch) time slice expired, scheduling soon
+[001052036] PID 02 (init batch) Waking pid 2
+$$ timeslice summary for pid 2 (init batch) : queued at 1038883, ran at 1047022, ended at 1052036
+=== schedule pid 4 (init short_sleep)
+[001053470] PID 04 (init short_sleep) syscall sleep(1)
+[001053940] PID 04 (init short_sleep) sleeping until 1053940
+$$ timeslice summary for pid 4 (init short_sleep) : queued at 1044106, ran at 1052036, ended at 1054440
+=== schedule pid 5 (init burst)
+*** timer woke pid 4
+[001055826] PID 05 (init burst) Waking pid 4
+*** timer woke pid 3
+[001057444] PID 05 (init burst) Waking pid 3
+[001058543] PID 05 (init burst) time slice expired, scheduling soon
+[001059155] PID 05 (init burst) Waking pid 5
+$$ timeslice summary for pid 5 (init burst) : queued at 1047422, ran at 1054440, ended at 1059154
+=== schedule pid 2 (init batch)
+[001063692] PID 02 (init batch) time slice expired, scheduling soon
+[001064250] PID 02 (init batch) Waking pid 2
+$$ timeslice summary for pid 2 (init batch) : queued at 1052432, ran at 1059154, ended at 1064249
+=== schedule pid 4 (init short_sleep)
+[001065803] PID 04 (init short_sleep) syscall sleep(1)
+[001066275] PID 04 (init short_sleep) sleeping until 1066275
+$$ timeslice summary for pid 4 (init short_sleep) : queued at 1056214, ran at 1064249, ended at 1066778
+=== schedule pid 3 (init interactive)
+*** timer woke pid 4
+[001068189] PID 03 (init interactive) Waking pid 4
+[001068677] PID 03 (init interactive) syscall write(...)
+HI
+[001069313] PID 03 (init interactive) syscall sleep(100000)
+[001069807] PID 03 (init interactive) sleeping until 1169806
+$$ timeslice summary for pid 3 (init interactive) : queued at 1057891, ran at 1066778, ended at 1070283
+=== schedule pid 5 (init burst)
+[001074401] PID 05 (init burst) time slice expired, scheduling soon
+[001075111] PID 05 (init burst) Waking pid 5
+$$ timeslice summary for pid 5 (init burst) : queued at 1059547, ran at 1070283, ended at 1075109
+=== schedule pid 2 (init batch)
+[001079787] PID 02 (init batch) time slice expired, scheduling soon
+[001080460] PID 02 (init batch) Waking pid 2
+$$ timeslice summary for pid 2 (init batch) : queued at 1064762, ran at 1075109, ended at 1080459
+=== schedule pid 4 (init short_sleep)
+[001082082] PID 04 (init short_sleep) syscall sleep(1)
+[001082539] PID 04 (init short_sleep) sleeping until 1082540
+$$ timeslice summary for pid 4 (init short_sleep) : queued at 1068616, ran at 1080459, ended at 1083035
+=== schedule pid 5 (init burst)
+*** timer woke pid 4
+[001084485] PID 05 (init burst) Waking pid 4
+[001087085] PID 05 (init burst) time slice expired, scheduling soon
+[001087659] PID 05 (init burst) Waking pid 5
+$$ timeslice summary for pid 5 (init burst) : queued at 1075647, ran at 1083035, ended at 1087659
+=== schedule pid 2 (init batch)
+[001092182] PID 02 (init batch) time slice expired, scheduling soon
+[001092770] PID 02 (init batch) Waking pid 2
+$$ timeslice summary for pid 2 (init batch) : queued at 1080870, ran at 1087659, ended at 1092769
+=== schedule pid 4 (init short_sleep)
+[001094359] PID 04 (init short_sleep) syscall sleep(1)
+[001094841] PID 04 (init short_sleep) sleeping until 1094841
+$$ timeslice summary for pid 4 (init short_sleep) : queued at 1084879, ran at 1092769, ended at 1095344
+=== schedule pid 5 (init burst)
+*** timer woke pid 4
+[001096926] PID 05 (init burst) Waking pid 4
+[001099443] PID 05 (init burst) time slice expired, scheduling soon
+[001100065] PID 05 (init burst) Waking pid 5
+$$ timeslice summary for pid 5 (init burst) : queued at 1088081, ran at 1095344, ended at 1100064
+=== schedule pid 2 (init batch)
+[001104564] PID 02 (init batch) time slice expired, scheduling soon
+[001105109] PID 02 (init batch) Waking pid 2
+$$ timeslice summary for pid 2 (init batch) : queued at 1093191, ran at 1100064, ended at 1105108
+=== schedule pid 4 (init short_sleep)
+[001107805] PID 04 (init short_sleep) syscall sleep(1)
+[001108628] PID 04 (init short_sleep) sleeping until 1108627
+$$ timeslice summary for pid 4 (init short_sleep) : queued at 1097349, ran at 1105108, ended at 1109172
+=== schedule pid 5 (init burst)
+*** timer woke pid 4
+[001110645] PID 05 (init burst) Waking pid 4
+[001113217] PID 05 (init burst) time slice expired, scheduling soon
+[001113754] PID 05 (init burst) Waking pid 5
+$$ timeslice summary for pid 5 (init burst) : queued at 1100465, ran at 1109172, ended at 1113753
+=== schedule pid 2 (init batch)
+[001118267] PID 02 (init batch) time slice expired, scheduling soon
+[001118842] PID 02 (init batch) Waking pid 2
+$$ timeslice summary for pid 2 (init batch) : queued at 1105507, ran at 1113753, ended at 1118841
+=== schedule pid 4 (init short_sleep)
+[001120279] PID 04 (init short_sleep) syscall sleep(1)
+[001120716] PID 04 (init short_sleep) sleeping until 1120716
+$$ timeslice summary for pid 4 (init short_sleep) : queued at 1111039, ran at 1118841, ended at 1121198
+=== schedule pid 5 (init burst)
+*** timer woke pid 4
+[001122591] PID 05 (init burst) Waking pid 4
+[001125244] PID 05 (init burst) time slice expired, scheduling soon
+[001125808] PID 05 (init burst) Waking pid 5
+$$ timeslice summary for pid 5 (init burst) : queued at 1114187, ran at 1121198, ended at 1125807
+=== schedule pid 2 (init batch)
+[001130333] PID 02 (init batch) time slice expired, scheduling soon
+[001130936] PID 02 (init batch) Waking pid 2
+$$ timeslice summary for pid 2 (init batch) : queued at 1119243, ran at 1125807, ended at 1130936
+=== schedule pid 4 (init short_sleep)
+[001132465] PID 04 (init short_sleep) syscall sleep(1)
+[001132906] PID 04 (init short_sleep) sleeping until 1132907
+$$ timeslice summary for pid 4 (init short_sleep) : queued at 1124657, ran at 1130936, ended at 1133381
+=== schedule pid 5 (init burst)
+*** timer woke pid 4
+[001134753] PID 05 (init burst) Waking pid 4
+[001137430] PID 05 (init burst) time slice expired, scheduling soon
+[001138001] PID 05 (init burst) Waking pid 5
+$$ timeslice summary for pid 5 (init burst) : queued at 1126224, ran at 1133381, ended at 1138000
+=== schedule pid 2 (init batch)
+[001142632] PID 02 (init batch) time slice expired, scheduling soon
+[001143213] PID 02 (init batch) Waking pid 2
+$$ timeslice summary for pid 2 (init batch) : queued at 1131351, ran at 1138000, ended at 1143211
+=== schedule pid 4 (init short_sleep)
+[001144851] PID 04 (init short_sleep) syscall sleep(1)
+[001145361] PID 04 (init short_sleep) sleeping until 1145361
+$$ timeslice summary for pid 4 (init short_sleep) : queued at 1135140, ran at 1143211, ended at 1145875
+=== schedule pid 5 (init burst)
+*** timer woke pid 4
+[001147342] PID 05 (init burst) Waking pid 4
+[001149965] PID 05 (init burst) time slice expired, scheduling soon
+[001150552] PID 05 (init burst) Waking pid 5
+$$ timeslice summary for pid 5 (init burst) : queued at 1138401, ran at 1145875, ended at 1150551
+=== schedule pid 2 (init batch)
+[001155046] PID 02 (init batch) time slice expired, scheduling soon
+[001155563] PID 02 (init batch) Waking pid 2
+$$ timeslice summary for pid 2 (init batch) : queued at 1143656, ran at 1150551, ended at 1155563
+=== schedule pid 4 (init short_sleep)
+[001158778] PID 04 (init short_sleep) syscall sleep(1)
+[001159327] PID 04 (init short_sleep) sleeping until 1159327
+$$ timeslice summary for pid 4 (init short_sleep) : queued at 1147748, ran at 1155563, ended at 1159847
+=== schedule pid 5 (init burst)
+*** timer woke pid 4
+[001161345] PID 05 (init burst) Waking pid 4
+[001163919] PID 05 (init burst) time slice expired, scheduling soon
+[001164486] PID 05 (init burst) Waking pid 5
+$$ timeslice summary for pid 5 (init burst) : queued at 1150948, ran at 1159847, ended at 1164485
+=== schedule pid 2 (init batch)
+[001169002] PID 02 (init batch) time slice expired, scheduling soon
+[001169602] PID 02 (init batch) Waking pid 2
+$$ timeslice summary for pid 2 (init batch) : queued at 1155993, ran at 1164485, ended at 1169602
+=== schedule pid 4 (init short_sleep)
+*** timer woke pid 3
+[001171366] PID 04 (init short_sleep) Waking pid 3
+[001171788] PID 04 (init short_sleep) syscall sleep(1)
+[001172283] PID 04 (init short_sleep) sleeping until 1172284
+$$ timeslice summary for pid 4 (init short_sleep) : queued at 1161734, ran at 1169602, ended at 1172841
+=== schedule pid 5 (init burst)
+*** timer woke pid 4
+[001176230] PID 05 (init burst) Waking pid 4
+[001176870] PID 05 (init burst) time slice expired, scheduling soon
+[001177426] PID 05 (init burst) Waking pid 5
+$$ timeslice summary for pid 5 (init burst) : queued at 1164902, ran at 1172841, ended at 1177424
+=== schedule pid 2 (init batch)
+[001181926] PID 02 (init batch) time slice expired, scheduling soon
+[001182510] PID 02 (init batch) Waking pid 2
+$$ timeslice summary for pid 2 (init batch) : queued at 1170020, ran at 1177424, ended at 1182510
+=== schedule pid 3 (init interactive)
+[001184040] PID 03 (init interactive) syscall write(...)
+HI
+[001184681] PID 03 (init interactive) syscall sleep(100000)
+[001185199] PID 03 (init interactive) sleeping until 1285199
+$$ timeslice summary for pid 3 (init interactive) : queued at 1171780, ran at 1182510, ended at 1185691
+=== schedule pid 4 (init short_sleep)
+[001186855] PID 04 (init short_sleep) syscall sleep(1)
+[001187302] PID 04 (init short_sleep) sleeping until 1187303
+$$ timeslice summary for pid 4 (init short_sleep) : queued at 1176633, ran at 1185691, ended at 1187775
+=== schedule pid 5 (init burst)
+*** timer woke pid 4
+[001189214] PID 05 (init burst) Waking pid 4
+[001191994] PID 05 (init burst) time slice expired, scheduling soon
+[001192680] PID 05 (init burst) Waking pid 5
+$$ timeslice summary for pid 5 (init burst) : queued at 1177829, ran at 1187775, ended at 1192679
+=== schedule pid 2 (init batch)
+[001197252] PID 02 (init batch) time slice expired, scheduling soon
+[001197791] PID 02 (init batch) Waking pid 2
+$$ timeslice summary for pid 2 (init batch) : queued at 1182907, ran at 1192679, ended at 1197790
+=== schedule pid 4 (init short_sleep)
+[001199303] PID 04 (init short_sleep) syscall sleep(1)
+[001199777] PID 04 (init short_sleep) sleeping until 1199777
+$$ timeslice summary for pid 4 (init short_sleep) : queued at 1189603, ran at 1197790, ended at 1200265
+=== schedule pid 5 (init burst)
+*** timer woke pid 4
+[001201579] PID 05 (init burst) Waking pid 4
+[001204318] PID 05 (init burst) time slice expired, scheduling soon
+[001204899] PID 05 (init burst) Waking pid 5
+$$ timeslice summary for pid 5 (init burst) : queued at 1193163, ran at 1200265, ended at 1204898
+=== schedule pid 2 (init batch)
+[001209498] PID 02 (init batch) time slice expired, scheduling soon
+[001210116] PID 02 (init batch) Waking pid 2
+$$ timeslice summary for pid 2 (init batch) : queued at 1198202, ran at 1204898, ended at 1210113
+=== schedule pid 4 (init short_sleep)
+[001211664] PID 04 (init short_sleep) syscall sleep(1)
+[001212169] PID 04 (init short_sleep) sleeping until 1212169
+$$ timeslice summary for pid 4 (init short_sleep) : queued at 1201962, ran at 1210113, ended at 1212690
+=== schedule pid 5 (init burst)
+*** timer woke pid 4
+[001214263] PID 05 (init burst) Waking pid 4
+[001216755] PID 05 (init burst) time slice expired, scheduling soon
+[001217271] PID 05 (init burst) Waking pid 5
+$$ timeslice summary for pid 5 (init burst) : queued at 1205297, ran at 1212690, ended at 1217270
+=== schedule pid 2 (init batch)
+[001222010] PID 02 (init batch) time slice expired, scheduling soon
+[001222600] PID 02 (init batch) Waking pid 2
+$$ timeslice summary for pid 2 (init batch) : queued at 1210597, ran at 1217270, ended at 1222599
+=== schedule pid 4 (init short_sleep)
+[001225463] PID 04 (init short_sleep) syscall sleep(1)
+[001225936] PID 04 (init short_sleep) sleeping until 1225936
+$$ timeslice summary for pid 4 (init short_sleep) : queued at 1214704, ran at 1222599, ended at 1226717
+=== schedule pid 5 (init burst)
+*** timer woke pid 4
+[001228293] PID 05 (init burst) Waking pid 4
+[001229916] PID 05 (init burst) syscall sleep(500000)
+[001230388] PID 05 (init burst) sleeping until 1730387
+$$ timeslice summary for pid 5 (init burst) : queued at 1217916, ran at 1226717, ended at 1231018
+=== schedule pid 2 (init batch)
+[001235107] PID 02 (init batch) time slice expired, scheduling soon
+[001235707] PID 02 (init batch) Waking pid 2
+$$ timeslice summary for pid 2 (init batch) : queued at 1223033, ran at 1231018, ended at 1235706
+=== schedule pid 4 (init short_sleep)
+[001237213] PID 04 (init short_sleep) syscall sleep(1)
+[001237652] PID 04 (init short_sleep) sleeping until 1237653
+$$ timeslice summary for pid 4 (init short_sleep) : queued at 1228703, ran at 1235706, ended at 1238122
+=== schedule pid 2 (init batch)
+*** timer woke pid 4
+[001239499] PID 02 (init batch) Waking pid 4
+[001239893] PID 02 (init batch) Waking pid 2
+$$ timeslice summary for pid 2 (init batch) : queued at 1236103, ran at 1238122, ended at 1239892
+=== schedule pid 4 (init short_sleep)
+[001242595] PID 04 (init short_sleep) syscall sleep(1)
+[001243043] PID 04 (init short_sleep) sleeping until 1243044
+$$ timeslice summary for pid 4 (init short_sleep) : queued at 1239886, ran at 1239892, ended at 1243543
+=== schedule pid 2 (init batch)
+*** timer woke pid 4
+[001244949] PID 02 (init batch) Waking pid 4
+[001245387] PID 02 (init batch) Waking pid 2
+$$ timeslice summary for pid 2 (init batch) : queued at 1240330, ran at 1243543, ended at 1245386
+=== schedule pid 4 (init short_sleep)
+[001246948] PID 04 (init short_sleep) syscall sleep(1)
+[001247447] PID 04 (init short_sleep) sleeping until 1247447
+$$ timeslice summary for pid 4 (init short_sleep) : queued at 1245377, ran at 1245386, ended at 1247936
+=== schedule pid 2 (init batch)
+*** timer woke pid 4
+[001249362] PID 02 (init batch) Waking pid 4
+[001249774] PID 02 (init batch) Waking pid 2
+$$ timeslice summary for pid 2 (init batch) : queued at 1245799, ran at 1247936, ended at 1249773
+=== schedule pid 4 (init short_sleep)
+[001251216] PID 04 (init short_sleep) syscall sleep(1)
+[001251655] PID 04 (init short_sleep) sleeping until 1251656
+$$ timeslice summary for pid 4 (init short_sleep) : queued at 1249766, ran at 1249773, ended at 1252157
+=== schedule pid 2 (init batch)
+*** timer woke pid 4
+[001253517] PID 02 (init batch) Waking pid 4
+[001253908] PID 02 (init batch) Waking pid 2
+$$ timeslice summary for pid 2 (init batch) : queued at 1250180, ran at 1252157, ended at 1253908
+=== schedule pid 4 (init short_sleep)
+[001255339] PID 04 (init short_sleep) syscall sleep(1)
+[001255813] PID 04 (init short_sleep) sleeping until 1255813
+$$ timeslice summary for pid 4 (init short_sleep) : queued at 1253904, ran at 1253908, ended at 1256321
+=== schedule pid 2 (init batch)
+*** timer woke pid 4
+[001260263] PID 02 (init batch) Waking pid 4
+[001260710] PID 02 (init batch) Waking pid 2
+$$ timeslice summary for pid 2 (init batch) : queued at 1254304, ran at 1256321, ended at 1260709
+=== schedule pid 4 (init short_sleep)
+[001262439] PID 04 (init short_sleep) syscall sleep(1)
+[001262942] PID 04 (init short_sleep) sleeping until 1262942
+$$ timeslice summary for pid 4 (init short_sleep) : queued at 1260688, ran at 1260709, ended at 1263468
+=== schedule pid 2 (init batch)
+*** timer woke pid 4
+[001264944] PID 02 (init batch) Waking pid 4
+[001265359] PID 02 (init batch) Waking pid 2
+$$ timeslice summary for pid 2 (init batch) : queued at 1261253, ran at 1263468, ended at 1265358
+=== schedule pid 4 (init short_sleep)
+[001266958] PID 04 (init short_sleep) syscall sleep(1)
+[001267430] PID 04 (init short_sleep) sleeping until 1267430
+$$ timeslice summary for pid 4 (init short_sleep) : queued at 1265338, ran at 1265358, ended at 1267929
+=== schedule pid 2 (init batch)
+*** timer woke pid 4
+[001269244] PID 02 (init batch) Waking pid 4
+[001269637] PID 02 (init batch) Waking pid 2
+$$ timeslice summary for pid 2 (init batch) : queued at 1265844, ran at 1267929, ended at 1269637
+=== schedule pid 4 (init short_sleep)
+[001271166] PID 04 (init short_sleep) syscall sleep(1)
+[001271618] PID 04 (init short_sleep) sleeping until 1271619
+$$ timeslice summary for pid 4 (init short_sleep) : queued at 1269631, ran at 1269637, ended at 1272088
+=== schedule pid 2 (init batch)
+*** timer woke pid 4
+[001273436] PID 02 (init batch) Waking pid 4
+[001275329] PID 02 (init batch) Waking pid 2
+$$ timeslice summary for pid 2 (init batch) : queued at 1270098, ran at 1272088, ended at 1275327
+=== schedule pid 4 (init short_sleep)
+[001279411] PID 04 (init short_sleep) syscall sleep(1)
+[001279866] PID 04 (init short_sleep) sleeping until 1279866
+$$ timeslice summary for pid 4 (init short_sleep) : queued at 1275296, ran at 1275327, ended at 1280393
+=== schedule pid 2 (init batch)
+*** timer woke pid 4
+[001281950] PID 02 (init batch) Waking pid 4
+[001282371] PID 02 (init batch) Waking pid 2
+$$ timeslice summary for pid 2 (init batch) : queued at 1275859, ran at 1280393, ended at 1282371
+=== schedule pid 4 (init short_sleep)
+[001283853] PID 04 (init short_sleep) syscall sleep(1)
+[001284288] PID 04 (init short_sleep) sleeping until 1284289
+$$ timeslice summary for pid 4 (init short_sleep) : queued at 1282360, ran at 1282371, ended at 1284763
+=== schedule pid 2 (init batch)
+*** timer woke pid 4
+[001286104] PID 02 (init batch) Waking pid 4
+*** timer woke pid 3
+[001286786] PID 02 (init batch) Waking pid 3
+[001287174] PID 02 (init batch) Waking pid 2
+$$ timeslice summary for pid 2 (init batch) : queued at 1282823, ran at 1284763, ended at 1287174
+=== schedule pid 4 (init short_sleep)
+[001288597] PID 04 (init short_sleep) syscall sleep(1)
+[001289067] PID 04 (init short_sleep) sleeping until 1289067
+$$ timeslice summary for pid 4 (init short_sleep) : queued at 1286527, ran at 1287174, ended at 1289633
+=== schedule pid 3 (init interactive)
+*** timer woke pid 4
+[001292958] PID 03 (init interactive) Waking pid 4
+[001293471] PID 03 (init interactive) syscall write(...)
+HI
+[001294185] PID 03 (init interactive) time slice expired, scheduling soon
+[001294774] PID 03 (init interactive) Waking pid 3
+$$ timeslice summary for pid 3 (init interactive) : queued at 1287169, ran at 1289633, ended at 1294773
+=== schedule pid 2 (init batch)
+[001299336] PID 02 (init batch) time slice expired, scheduling soon
+[001299863] PID 02 (init batch) Waking pid 2
+$$ timeslice summary for pid 2 (init batch) : queued at 1287569, ran at 1294773, ended at 1299862
+=== schedule pid 4 (init short_sleep)
+[001301295] PID 04 (init short_sleep) syscall sleep(1)
+[001301767] PID 04 (init short_sleep) sleeping until 1301768
+$$ timeslice summary for pid 4 (init short_sleep) : queued at 1293432, ran at 1299862, ended at 1302271
+=== schedule pid 3 (init interactive)
+*** timer woke pid 4
+[001303673] PID 03 (init interactive) Waking pid 4
+[001304111] PID 03 (init interactive) syscall sleep(100000)
+[001304592] PID 03 (init interactive) sleeping until 1404592
+$$ timeslice summary for pid 3 (init interactive) : queued at 1295215, ran at 1302271, ended at 1305065
+=== schedule pid 2 (init batch)
+[001309229] PID 02 (init batch) time slice expired, scheduling soon
+[001309936] PID 02 (init batch) Waking pid 2
+$$ timeslice summary for pid 2 (init batch) : queued at 1300259, ran at 1305065, ended at 1309934
+=== schedule pid 4 (init short_sleep)
+[001311558] PID 04 (init short_sleep) syscall sleep(1)
+[001312006] PID 04 (init short_sleep) sleeping until 1312006
+$$ timeslice summary for pid 4 (init short_sleep) : queued at 1304104, ran at 1309934, ended at 1312480
+=== schedule pid 2 (init batch)
+*** timer woke pid 4
+[001314004] PID 02 (init batch) Waking pid 4
+[001314419] PID 02 (init batch) Waking pid 2
+$$ timeslice summary for pid 2 (init batch) : queued at 1310452, ran at 1312480, ended at 1314418
+=== schedule pid 4 (init short_sleep)
+[001315972] PID 04 (init short_sleep) syscall sleep(1)
+[001316412] PID 04 (init short_sleep) sleeping until 1316413
+$$ timeslice summary for pid 4 (init short_sleep) : queued at 1314406, ran at 1314418, ended at 1316921
+=== schedule pid 2 (init batch)
+*** timer woke pid 4
+[001318347] PID 02 (init batch) Waking pid 4
+[001318739] PID 02 (init batch) Waking pid 2
+$$ timeslice summary for pid 2 (init batch) : queued at 1314884, ran at 1316921, ended at 1318738
+=== schedule pid 4 (init short_sleep)
+[001320165] PID 04 (init short_sleep) syscall sleep(1)
+[001320630] PID 04 (init short_sleep) sleeping until 1320631
+$$ timeslice summary for pid 4 (init short_sleep) : queued at 1318732, ran at 1318738, ended at 1321140
+=== schedule pid 2 (init batch)
+*** timer woke pid 4
+[001322645] PID 02 (init batch) Waking pid 4
+[001323041] PID 02 (init batch) Waking pid 2
+$$ timeslice summary for pid 2 (init batch) : queued at 1319137, ran at 1321140, ended at 1323041
+=== schedule pid 4 (init short_sleep)
+[001326661] PID 04 (init short_sleep) syscall sleep(1)
+[001327163] PID 04 (init short_sleep) sleeping until 1327163
+$$ timeslice summary for pid 4 (init short_sleep) : queued at 1323035, ran at 1323041, ended at 1327723
+=== schedule pid 2 (init batch)
+*** timer woke pid 4
+[001329104] PID 02 (init batch) Waking pid 4
+[001329502] PID 02 (init batch) Waking pid 2
+$$ timeslice summary for pid 2 (init batch) : queued at 1323468, ran at 1327723, ended at 1329502
+=== schedule pid 4 (init short_sleep)
+[001331367] PID 04 (init short_sleep) syscall sleep(1)
+[001331853] PID 04 (init short_sleep) sleeping until 1331853
+$$ timeslice summary for pid 4 (init short_sleep) : queued at 1329494, ran at 1329502, ended at 1332372
+=== schedule pid 2 (init batch)
+*** timer woke pid 4
+[001333721] PID 02 (init batch) Waking pid 4
+[001334115] PID 02 (init batch) Waking pid 2
+$$ timeslice summary for pid 2 (init batch) : queued at 1329929, ran at 1332372, ended at 1334115
+=== schedule pid 4 (init short_sleep)
+[001335637] PID 04 (init short_sleep) syscall sleep(1)
+[001336091] PID 04 (init short_sleep) sleeping until 1336092
+$$ timeslice summary for pid 4 (init short_sleep) : queued at 1334109, ran at 1334115, ended at 1336561
+=== schedule pid 2 (init batch)
+*** timer woke pid 4
+[001337942] PID 02 (init batch) Waking pid 4
+[001338394] PID 02 (init batch) Waking pid 2
+$$ timeslice summary for pid 2 (init batch) : queued at 1334574, ran at 1336561, ended at 1338394
+=== schedule pid 4 (init short_sleep)
+[001339925] PID 04 (init short_sleep) syscall sleep(1)
+[001340365] PID 04 (init short_sleep) sleeping until 1340366
+$$ timeslice summary for pid 4 (init short_sleep) : queued at 1338388, ran at 1338394, ended at 1342306
+=== schedule pid 2 (init batch)
+*** timer woke pid 4
+[001343972] PID 02 (init batch) Waking pid 4
+[001344391] PID 02 (init batch) Waking pid 2
+$$ timeslice summary for pid 2 (init batch) : queued at 1338791, ran at 1342306, ended at 1344390
+=== schedule pid 4 (init short_sleep)
+[001345928] PID 04 (init short_sleep) syscall sleep(1)
+[001346373] PID 04 (init short_sleep) sleeping until 1346374
+$$ timeslice summary for pid 4 (init short_sleep) : queued at 1344376, ran at 1344390, ended at 1346853
+=== schedule pid 2 (init batch)
+*** timer woke pid 4
+[001348372] PID 02 (init batch) Waking pid 4
+[001348811] PID 02 (init batch) Waking pid 2
+$$ timeslice summary for pid 2 (init batch) : queued at 1344860, ran at 1346853, ended at 1348811
+=== schedule pid 4 (init short_sleep)
+[001350377] PID 04 (init short_sleep) syscall sleep(1)
+[001350813] PID 04 (init short_sleep) sleeping until 1350814
+$$ timeslice summary for pid 4 (init short_sleep) : queued at 1348799, ran at 1348811, ended at 1351293
+=== schedule pid 2 (init batch)
+*** timer woke pid 4
+[001352685] PID 02 (init batch) Waking pid 4
+[001353326] PID 02 (init batch) Waking pid 2
+$$ timeslice summary for pid 2 (init batch) : queued at 1349251, ran at 1351293, ended at 1353326
+=== schedule pid 4 (init short_sleep)
+[001354804] PID 04 (init short_sleep) syscall sleep(1)
+[001355244] PID 04 (init short_sleep) sleeping until 1355245
+$$ timeslice summary for pid 4 (init short_sleep) : queued at 1353320, ran at 1353326, ended at 1355749
+=== schedule pid 2 (init batch)
+*** timer woke pid 4
+[001357152] PID 02 (init batch) Waking pid 4
+[001359292] PID 02 (init batch) Waking pid 2
+$$ timeslice summary for pid 2 (init batch) : queued at 1353774, ran at 1355749, ended at 1359290
+=== schedule pid 4 (init short_sleep)
+[001361082] PID 04 (init short_sleep) syscall sleep(1)
+[001361652] PID 04 (init short_sleep) sleeping until 1361651
+$$ timeslice summary for pid 4 (init short_sleep) : queued at 1359257, ran at 1359290, ended at 1362206
+=== schedule pid 2 (init batch)
+*** timer woke pid 4
+[001363638] PID 02 (init batch) Waking pid 4
+[001364079] PID 02 (init batch) Waking pid 2
+$$ timeslice summary for pid 2 (init batch) : queued at 1359821, ran at 1362206, ended at 1364078
+=== schedule pid 4 (init short_sleep)
+[001365720] PID 04 (init short_sleep) syscall sleep(1)
+[001366202] PID 04 (init short_sleep) sleeping until 1366203
+$$ timeslice summary for pid 4 (init short_sleep) : queued at 1364063, ran at 1364078, ended at 1366713
+=== schedule pid 2 (init batch)
+*** timer woke pid 4
+[001368068] PID 02 (init batch) Waking pid 4
+[001368458] PID 02 (init batch) Waking pid 2
+$$ timeslice summary for pid 2 (init batch) : queued at 1364567, ran at 1366713, ended at 1368458
+=== schedule pid 4 (init short_sleep)
+[001370015] PID 04 (init short_sleep) syscall sleep(1)
+[001370487] PID 04 (init short_sleep) sleeping until 1370487
+$$ timeslice summary for pid 4 (init short_sleep) : queued at 1368451, ran at 1368458, ended at 1370977
+=== schedule pid 2 (init batch)
+*** timer woke pid 4
+[001372281] PID 02 (init batch) Waking pid 4
+[001372669] PID 02 (init batch) Waking pid 2
+$$ timeslice summary for pid 2 (init batch) : queued at 1368861, ran at 1370977, ended at 1372669
+=== schedule pid 4 (init short_sleep)
+[001375590] PID 04 (init short_sleep) syscall sleep(1)
+[001376140] PID 04 (init short_sleep) sleeping until 1376140
+$$ timeslice summary for pid 4 (init short_sleep) : queued at 1372664, ran at 1372669, ended at 1376679
+=== schedule pid 2 (init batch)
+*** timer woke pid 4
+[001378132] PID 02 (init batch) Waking pid 4
+[001378603] PID 02 (init batch) Waking pid 2
+$$ timeslice summary for pid 2 (init batch) : queued at 1373132, ran at 1376679, ended at 1378602
+=== schedule pid 4 (init short_sleep)
+[001380260] PID 04 (init short_sleep) syscall sleep(1)
+[001380743] PID 04 (init short_sleep) sleeping until 1380743
+$$ timeslice summary for pid 4 (init short_sleep) : queued at 1378591, ran at 1378602, ended at 1381279
+=== schedule pid 2 (init batch)
+*** timer woke pid 4
+[001382741] PID 02 (init batch) Waking pid 4
+[001383152] PID 02 (init batch) Waking pid 2
+$$ timeslice summary for pid 2 (init batch) : queued at 1379077, ran at 1381279, ended at 1383151
+=== schedule pid 4 (init short_sleep)
+[001384632] PID 04 (init short_sleep) syscall sleep(1)
+[001385319] PID 04 (init short_sleep) sleeping until 1385320
+$$ timeslice summary for pid 4 (init short_sleep) : queued at 1383144, ran at 1383151, ended at 1385863
+=== schedule pid 2 (init batch)
+*** timer woke pid 4
+[001387210] PID 02 (init batch) Waking pid 4
+[001387635] PID 02 (init batch) Waking pid 2
+$$ timeslice summary for pid 2 (init batch) : queued at 1383598, ran at 1385863, ended at 1387635
+=== schedule pid 4 (init short_sleep)
+[001389069] PID 04 (init short_sleep) syscall sleep(1)
+[001389504] PID 04 (init short_sleep) sleeping until 1389505
+$$ timeslice summary for pid 4 (init short_sleep) : queued at 1387629, ran at 1387635, ended at 1389984
+=== schedule pid 2 (init batch)
+*** timer woke pid 4
+[001393361] PID 02 (init batch) Waking pid 4
+[001393806] PID 02 (init batch) Waking pid 2
+$$ timeslice summary for pid 2 (init batch) : queued at 1388036, ran at 1389984, ended at 1393804
+=== schedule pid 4 (init short_sleep)
+[001395535] PID 04 (init short_sleep) syscall exit()
+[001395967] PID 04 (init short_sleep) thread stopped
+$$ timeslice summary for pid 4 (init short_sleep) : queued at 1393783, ran at 1393804, ended at 1396438
+=== schedule pid 2 (init batch)
+[001406111] PID 02 (init batch) time slice expired, scheduling soon
+*** timer woke pid 3
+[001406912] PID 02 (init batch) Waking pid 3
+[001407731] PID 02 (init batch) Waking pid 2
+$$ timeslice summary for pid 2 (init batch) : queued at 1394326, ran at 1397278, ended at 1407730
+=== schedule pid 3 (init interactive)
+[001409243] PID 03 (init interactive) syscall write(...)
+HI
+[001409872] PID 03 (init interactive) syscall sleep(100000)
+[001410413] PID 03 (init interactive) sleeping until 1510412
+$$ timeslice summary for pid 3 (init interactive) : queued at 1407691, ran at 1407730, ended at 1414648
+=== schedule pid 2 (init batch)
+[001419344] PID 02 (init batch) time slice expired, scheduling soon
+[001419926] PID 02 (init batch) Waking pid 2
+[001427710] PID 02 (init batch) time slice expired, scheduling soon
+[001428316] PID 02 (init batch) Waking pid 2
+[001434209] PID 02 (init batch) time slice expired, scheduling soon
+[001434786] PID 02 (init batch) Waking pid 2
+[001439297] PID 02 (init batch) time slice expired, scheduling soon
+[001439842] PID 02 (init batch) Waking pid 2
+[001446010] PID 02 (init batch) time slice expired, scheduling soon
+[001446583] PID 02 (init batch) Waking pid 2
+[001451221] PID 02 (init batch) time slice expired, scheduling soon
+[001451764] PID 02 (init batch) Waking pid 2
+[001456300] PID 02 (init batch) time slice expired, scheduling soon
+[001456823] PID 02 (init batch) Waking pid 2
+[001461364] PID 02 (init batch) time slice expired, scheduling soon
+[001461917] PID 02 (init batch) Waking pid 2
+[001466426] PID 02 (init batch) time slice expired, scheduling soon
+[001466958] PID 02 (init batch) Waking pid 2
+[001471488] PID 02 (init batch) time slice expired, scheduling soon
+[001472005] PID 02 (init batch) Waking pid 2
+[001476490] PID 02 (init batch) time slice expired, scheduling soon
+[001477059] PID 02 (init batch) Waking pid 2
+[001481589] PID 02 (init batch) time slice expired, scheduling soon
+[001482129] PID 02 (init batch) Waking pid 2
+[001486631] PID 02 (init batch) time slice expired, scheduling soon
+[001487159] PID 02 (init batch) Waking pid 2
+[001491688] PID 02 (init batch) time slice expired, scheduling soon
+[001492928] PID 02 (init batch) Waking pid 2
+[001497630] PID 02 (init batch) time slice expired, scheduling soon
+[001498198] PID 02 (init batch) Waking pid 2
+[001502739] PID 02 (init batch) time slice expired, scheduling soon
+[001503261] PID 02 (init batch) Waking pid 2
+[001507703] PID 02 (init batch) time slice expired, scheduling soon
+[001508276] PID 02 (init batch) Waking pid 2
+*** timer woke pid 3
+[001510840] PID 02 (init batch) Waking pid 3
+[001512084] PID 02 (init batch) Waking pid 2
+$$ timeslice summary for pid 2 (init batch) : queued at 1408128, ran at 1414648, ended at 1512083
+=== schedule pid 3 (init interactive)
+[001513603] PID 03 (init interactive) syscall write(...)
+HI
+[001514221] PID 03 (init interactive) syscall sleep(100000)
+[001514734] PID 03 (init interactive) sleeping until 1614734
+$$ timeslice summary for pid 3 (init interactive) : queued at 1512065, ran at 1512083, ended at 1515211
+=== schedule pid 2 (init batch)
+[001519300] PID 02 (init batch) time slice expired, scheduling soon
+[001519832] PID 02 (init batch) Waking pid 2
+[001524282] PID 02 (init batch) time slice expired, scheduling soon
+[001526328] PID 02 (init batch) Waking pid 2
+[001530998] PID 02 (init batch) time slice expired, scheduling soon
+[001531629] PID 02 (init batch) Waking pid 2
+[001536203] PID 02 (init batch) time slice expired, scheduling soon
+[001536794] PID 02 (init batch) Waking pid 2
+[001541289] PID 02 (init batch) time slice expired, scheduling soon
+[001542642] PID 02 (init batch) Waking pid 2
+[001547225] PID 02 (init batch) time slice expired, scheduling soon
+[001547776] PID 02 (init batch) Waking pid 2
+[001552283] PID 02 (init batch) time slice expired, scheduling soon
+[001552875] PID 02 (init batch) Waking pid 2
+[001557404] PID 02 (init batch) time slice expired, scheduling soon
+[001558020] PID 02 (init batch) Waking pid 2
+[001563300] PID 02 (init batch) time slice expired, scheduling soon
+[001563861] PID 02 (init batch) Waking pid 2
+[001568424] PID 02 (init batch) time slice expired, scheduling soon
+[001568960] PID 02 (init batch) Waking pid 2
+[001573439] PID 02 (init batch) time slice expired, scheduling soon
+[001574023] PID 02 (init batch) Waking pid 2
+[001578584] PID 02 (init batch) time slice expired, scheduling soon
+[001579206] PID 02 (init batch) Waking pid 2
+[001583756] PID 02 (init batch) time slice expired, scheduling soon
+[001584284] PID 02 (init batch) Waking pid 2
+[001588779] PID 02 (init batch) time slice expired, scheduling soon
+[001589299] PID 02 (init batch) Waking pid 2
+[001593794] PID 02 (init batch) time slice expired, scheduling soon
+[001594436] PID 02 (init batch) Waking pid 2
+[001598961] PID 02 (init batch) time slice expired, scheduling soon
+[001599547] PID 02 (init batch) Waking pid 2
+[001604018] PID 02 (init batch) time slice expired, scheduling soon
+[001604596] PID 02 (init batch) Waking pid 2
+[001609243] PID 02 (init batch) time slice expired, scheduling soon
+[001609819] PID 02 (init batch) Waking pid 2
+[001614388] PID 02 (init batch) time slice expired, scheduling soon
+*** timer woke pid 3
+[001615263] PID 02 (init batch) Waking pid 3
+[001615700] PID 02 (init batch) Waking pid 2
+$$ timeslice summary for pid 2 (init batch) : queued at 1512547, ran at 1515211, ended at 1615699
+=== schedule pid 3 (init interactive)
+[001617159] PID 03 (init interactive) syscall write(...)
+HI
+[001617767] PID 03 (init interactive) syscall sleep(100000)
+[001618266] PID 03 (init interactive) sleeping until 1718265
+$$ timeslice summary for pid 3 (init interactive) : queued at 1615691, ran at 1615699, ended at 1618737
+=== schedule pid 2 (init batch)
+[001622790] PID 02 (init batch) time slice expired, scheduling soon
+[001623310] PID 02 (init batch) Waking pid 2
+[001627815] PID 02 (init batch) time slice expired, scheduling soon
+[001628371] PID 02 (init batch) Waking pid 2
+[001632954] PID 02 (init batch) time slice expired, scheduling soon
+[001633575] PID 02 (init batch) Waking pid 2
+[001638088] PID 02 (init batch) time slice expired, scheduling soon
+[001638674] PID 02 (init batch) Waking pid 2
+[001643200] PID 02 (init batch) time slice expired, scheduling soon
+[001643771] PID 02 (init batch) Waking pid 2
+[001648334] PID 02 (init batch) time slice expired, scheduling soon
+[001648872] PID 02 (init batch) Waking pid 2
+[001653354] PID 02 (init batch) time slice expired, scheduling soon
+[001653947] PID 02 (init batch) Waking pid 2
+[001658438] PID 02 (init batch) time slice expired, scheduling soon
+[001659752] PID 02 (init batch) Waking pid 2
+[001664330] PID 02 (init batch) time slice expired, scheduling soon
+[001664869] PID 02 (init batch) Waking pid 2
+[001669355] PID 02 (init batch) time slice expired, scheduling soon
+[001669884] PID 02 (init batch) Waking pid 2
+[001674378] PID 02 (init batch) time slice expired, scheduling soon
+[001674955] PID 02 (init batch) Waking pid 2
+[001679475] PID 02 (init batch) time slice expired, scheduling soon
+[001680087] PID 02 (init batch) Waking pid 2
+[001684653] PID 02 (init batch) time slice expired, scheduling soon
+[001685191] PID 02 (init batch) Waking pid 2
+[001689691] PID 02 (init batch) time slice expired, scheduling soon
+[001690211] PID 02 (init batch) Waking pid 2
+[001694709] PID 02 (init batch) time slice expired, scheduling soon
+[001695327] PID 02 (init batch) Waking pid 2
+[001699854] PID 02 (init batch) time slice expired, scheduling soon
+[001700446] PID 02 (init batch) Waking pid 2
+[001705005] PID 02 (init batch) time slice expired, scheduling soon
+[001705525] PID 02 (init batch) Waking pid 2
+[001710155] PID 02 (init batch) time slice expired, scheduling soon
+[001710712] PID 02 (init batch) Waking pid 2
+[001715238] PID 02 (init batch) time slice expired, scheduling soon
+[001715842] PID 02 (init batch) Waking pid 2
+*** timer woke pid 3
+[001718593] PID 02 (init batch) Waking pid 3
+[001718988] PID 02 (init batch) Waking pid 2
+$$ timeslice summary for pid 2 (init batch) : queued at 1616112, ran at 1618737, ended at 1718987
+=== schedule pid 3 (init interactive)
+[001720418] PID 03 (init interactive) syscall write(...)
+HI
+[001721058] PID 03 (init interactive) syscall sleep(100000)
+[001721527] PID 03 (init interactive) sleeping until 1821527
+$$ timeslice summary for pid 3 (init interactive) : queued at 1718982, ran at 1718987, ended at 1722034
+=== schedule pid 2 (init batch)
+[001726969] PID 02 (init batch) time slice expired, scheduling soon
+[001727557] PID 02 (init batch) Waking pid 2
+*** timer woke pid 5
+[001730735] PID 02 (init batch) Waking pid 5
+[001731204] PID 02 (init batch) Waking pid 2
+$$ timeslice summary for pid 2 (init batch) : queued at 1719384, ran at 1722034, ended at 1731204
+=== schedule pid 5 (init burst)
+[001735744] PID 05 (init burst) time slice expired, scheduling soon
+[001736280] PID 05 (init burst) Waking pid 5
+$$ timeslice summary for pid 5 (init burst) : queued at 1731194, ran at 1731204, ended at 1736280
+=== schedule pid 2 (init batch)
+[001740775] PID 02 (init batch) time slice expired, scheduling soon
+[001741355] PID 02 (init batch) Waking pid 2
+$$ timeslice summary for pid 2 (init batch) : queued at 1731646, ran at 1736280, ended at 1741355
+=== schedule pid 5 (init burst)
+[001745850] PID 05 (init burst) time slice expired, scheduling soon
+[001746400] PID 05 (init burst) Waking pid 5
+$$ timeslice summary for pid 5 (init burst) : queued at 1736683, ran at 1741355, ended at 1746398
+=== schedule pid 2 (init batch)
+[001750958] PID 02 (init batch) time slice expired, scheduling soon
+[001751572] PID 02 (init batch) Waking pid 2
+$$ timeslice summary for pid 2 (init batch) : queued at 1741751, ran at 1746398, ended at 1751571
+=== schedule pid 5 (init burst)
+[001756073] PID 05 (init burst) time slice expired, scheduling soon
+[001756595] PID 05 (init burst) Waking pid 5
+$$ timeslice summary for pid 5 (init burst) : queued at 1746810, ran at 1751571, ended at 1756595
+=== schedule pid 2 (init batch)
+[001761114] PID 02 (init batch) time slice expired, scheduling soon
+[001761769] PID 02 (init batch) Waking pid 2
+$$ timeslice summary for pid 2 (init batch) : queued at 1751972, ran at 1756595, ended at 1761768
+=== schedule pid 5 (init burst)
+[001766298] PID 05 (init burst) time slice expired, scheduling soon
+[001766839] PID 05 (init burst) Waking pid 5
+$$ timeslice summary for pid 5 (init burst) : queued at 1756991, ran at 1761768, ended at 1766839
+=== schedule pid 2 (init batch)
+[001771306] PID 02 (init batch) time slice expired, scheduling soon
+[001771887] PID 02 (init batch) Waking pid 2
+$$ timeslice summary for pid 2 (init batch) : queued at 1762180, ran at 1766839, ended at 1771886
+=== schedule pid 5 (init burst)
+[001777676] PID 05 (init burst) time slice expired, scheduling soon
+[001778319] PID 05 (init burst) Waking pid 5
+$$ timeslice summary for pid 5 (init burst) : queued at 1767245, ran at 1771886, ended at 1778317
+=== schedule pid 2 (init batch)
+[001782856] PID 02 (init batch) time slice expired, scheduling soon
+[001783451] PID 02 (init batch) Waking pid 2
+$$ timeslice summary for pid 2 (init batch) : queued at 1772285, ran at 1778317, ended at 1783451
+=== schedule pid 5 (init burst)
+[001787923] PID 05 (init burst) time slice expired, scheduling soon
+[001788442] PID 05 (init burst) Waking pid 5
+$$ timeslice summary for pid 5 (init burst) : queued at 1778758, ran at 1783451, ended at 1788441
+=== schedule pid 2 (init batch)
+[001794187] PID 02 (init batch) time slice expired, scheduling soon
+[001794865] PID 02 (init batch) Waking pid 2
+$$ timeslice summary for pid 2 (init batch) : queued at 1783855, ran at 1788441, ended at 1794864
+=== schedule pid 5 (init burst)
+[001799389] PID 05 (init burst) time slice expired, scheduling soon
+[001799944] PID 05 (init burst) Waking pid 5
+$$ timeslice summary for pid 5 (init burst) : queued at 1788839, ran at 1794864, ended at 1799943
+=== schedule pid 2 (init batch)
+[001804559] PID 02 (init batch) time slice expired, scheduling soon
+[001805150] PID 02 (init batch) Waking pid 2
+$$ timeslice summary for pid 2 (init batch) : queued at 1795302, ran at 1799943, ended at 1805150
+=== schedule pid 5 (init burst)
+[001810274] PID 05 (init burst) time slice expired, scheduling soon
+[001810828] PID 05 (init burst) Waking pid 5
+$$ timeslice summary for pid 5 (init burst) : queued at 1800400, ran at 1805150, ended at 1810827
+=== schedule pid 2 (init batch)
+[001815313] PID 02 (init batch) time slice expired, scheduling soon
+[001815941] PID 02 (init batch) Waking pid 2
+$$ timeslice summary for pid 2 (init batch) : queued at 1805605, ran at 1810827, ended at 1815940
+=== schedule pid 5 (init burst)
+[001820488] PID 05 (init burst) time slice expired, scheduling soon
+[001821008] PID 05 (init burst) Waking pid 5
+$$ timeslice summary for pid 5 (init burst) : queued at 1811247, ran at 1815940, ended at 1821008
+=== schedule pid 2 (init batch)
+*** timer woke pid 3
+[001822745] PID 02 (init batch) Waking pid 3
+[001825478] PID 02 (init batch) time slice expired, scheduling soon
+[001826052] PID 02 (init batch) Waking pid 2
+$$ timeslice summary for pid 2 (init batch) : queued at 1816379, ran at 1821008, ended at 1826052
+=== schedule pid 5 (init burst)
+[001831472] PID 05 (init burst) time slice expired, scheduling soon
+[001832063] PID 05 (init burst) Waking pid 5
+$$ timeslice summary for pid 5 (init burst) : queued at 1821405, ran at 1826052, ended at 1832061
+=== schedule pid 3 (init interactive)
+[001833632] PID 03 (init interactive) syscall write(...)
+HI
+[001834318] PID 03 (init interactive) syscall sleep(100000)
+[001834785] PID 03 (init interactive) sleeping until 1934784
+$$ timeslice summary for pid 3 (init interactive) : queued at 1823130, ran at 1832061, ended at 1835279
+=== schedule pid 2 (init batch)
+[001839390] PID 02 (init batch) time slice expired, scheduling soon
+[001839978] PID 02 (init batch) Waking pid 2
+$$ timeslice summary for pid 2 (init batch) : queued at 1827348, ran at 1835279, ended at 1839978
+=== schedule pid 5 (init burst)
+[001844529] PID 05 (init burst) time slice expired, scheduling soon
+[001845095] PID 05 (init burst) Waking pid 5
+$$ timeslice summary for pid 5 (init burst) : queued at 1832483, ran at 1839978, ended at 1845094
+=== schedule pid 2 (init batch)
+[001849600] PID 02 (init batch) time slice expired, scheduling soon
+[001850219] PID 02 (init batch) Waking pid 2
+$$ timeslice summary for pid 2 (init batch) : queued at 1840431, ran at 1845094, ended at 1850218
+=== schedule pid 5 (init burst)
+[001854725] PID 05 (init burst) time slice expired, scheduling soon
+[001855243] PID 05 (init burst) Waking pid 5
+$$ timeslice summary for pid 5 (init burst) : queued at 1845515, ran at 1850218, ended at 1855242
+=== schedule pid 2 (init batch)
+[001859688] PID 02 (init batch) time slice expired, scheduling soon
+[001861976] PID 02 (init batch) Waking pid 2
+$$ timeslice summary for pid 2 (init batch) : queued at 1850622, ran at 1855242, ended at 1861974
+=== schedule pid 5 (init burst)
+[001865992] PID 05 (init burst) syscall sleep(500000)
+[001866444] PID 05 (init burst) sleeping until 2366444
+$$ timeslice summary for pid 5 (init burst) : queued at 1855639, ran at 1861974, ended at 1866928
+=== schedule pid 2 (init batch)
+[001871026] PID 02 (init batch) time slice expired, scheduling soon
+[001871608] PID 02 (init batch) Waking pid 2
+[001876082] PID 02 (init batch) time slice expired, scheduling soon
+[001877386] PID 02 (init batch) Waking pid 2
+[001881938] PID 02 (init batch) time slice expired, scheduling soon
+[001882500] PID 02 (init batch) Waking pid 2
+[001886989] PID 02 (init batch) time slice expired, scheduling soon
+[001887517] PID 02 (init batch) Waking pid 2
+[001892217] PID 02 (init batch) time slice expired, scheduling soon
+[001892896] PID 02 (init batch) Waking pid 2
+[001898102] PID 02 (init batch) time slice expired, scheduling soon
+[001898716] PID 02 (init batch) Waking pid 2
+[001903284] PID 02 (init batch) time slice expired, scheduling soon
+[001903818] PID 02 (init batch) Waking pid 2
+[001908472] PID 02 (init batch) time slice expired, scheduling soon
+[001908991] PID 02 (init batch) Waking pid 2
+[001912952] PID 02 (init batch) syscall exit()
+[001913444] PID 02 (init batch) thread stopped
+$$ timeslice summary for pid 2 (init batch) : queued at 1862605, ran at 1866928, ended at 1913895
+=== schedule pid 0 (idle )
+*** timer woke pid 3
+[001935362] PID 00 (idle ) Waking pid 3
+=== schedule pid 3 (init interactive)
+[001936145] PID 03 (init interactive) syscall write(...)
+HI
+[001936788] PID 03 (init interactive) syscall sleep(100000)
+[001937256] PID 03 (init interactive) sleeping until 2037255
+$$ timeslice summary for pid 3 (init interactive) : queued at 1935729, ran at 1935737, ended at 1937761
+=== schedule pid 0 (idle )
+*** timer woke pid 3
+[002042679] PID 00 (idle ) Waking pid 3
+=== schedule pid 3 (init interactive)
+[002046374] PID 03 (init interactive) syscall write(...)
+HI
+[002049998] PID 03 (init interactive) time slice expired, scheduling soon
+[002052854] PID 03 (init interactive) Waking pid 3
+[002055467] PID 03 (init interactive) syscall exit()
+[002057572] PID 03 (init interactive) thread stopped
+$$ timeslice summary for pid 3 (init interactive) : queued at 2044435, ran at 2044460, ended at 2061593
+=== schedule pid 0 (idle )
+*** timer woke pid 5
+[002369134] PID 00 (idle ) Waking pid 5
+=== schedule pid 5 (init burst)
+[002375207] PID 05 (init burst) time slice expired, scheduling soon
+[002377710] PID 05 (init burst) Waking pid 5
+[002383897] PID 05 (init burst) time slice expired, scheduling soon
+[002386490] PID 05 (init burst) Waking pid 5
+[002393085] PID 05 (init burst) time slice expired, scheduling soon
+[002395609] PID 05 (init burst) Waking pid 5
+[002404114] PID 05 (init burst) time slice expired, scheduling soon
+[002406780] PID 05 (init burst) Waking pid 5
+[002413045] PID 05 (init burst) time slice expired, scheduling soon
+[002415562] PID 05 (init burst) Waking pid 5
+[002423849] PID 05 (init burst) time slice expired, scheduling soon
+[002425542] PID 05 (init burst) Waking pid 5
+[002430794] PID 05 (init burst) time slice expired, scheduling soon
+[002431811] PID 05 (init burst) Waking pid 5
+[002436803] PID 05 (init burst) time slice expired, scheduling soon
+[002437639] PID 05 (init burst) Waking pid 5
+[002442456] PID 05 (init burst) time slice expired, scheduling soon
+[002443168] PID 05 (init burst) Waking pid 5
+[002447787] PID 05 (init burst) time slice expired, scheduling soon
+[002448418] PID 05 (init burst) Waking pid 5
+[002452977] PID 05 (init burst) time slice expired, scheduling soon
+[002453551] PID 05 (init burst) Waking pid 5
+[002458124] PID 05 (init burst) time slice expired, scheduling soon
+[002458653] PID 05 (init burst) Waking pid 5
+[002464065] PID 05 (init burst) time slice expired, scheduling soon
+[002464661] PID 05 (init burst) Waking pid 5
+[002469188] PID 05 (init burst) time slice expired, scheduling soon
+[002469729] PID 05 (init burst) Waking pid 5
+[002474231] PID 05 (init burst) time slice expired, scheduling soon
+[002474746] PID 05 (init burst) Waking pid 5
+[002477494] PID 05 (init burst) syscall sleep(500000)
+[002477936] PID 05 (init burst) sleeping until 2977936
+$$ timeslice summary for pid 5 (init burst) : queued at 2370951, ran at 2370966, ended at 2478427
+=== schedule pid 0 (idle )
+*** timer woke pid 5
+[002981164] PID 00 (idle ) Waking pid 5
+=== schedule pid 5 (init burst)
+[002987061] PID 05 (init burst) time slice expired, scheduling soon
+[002987802] PID 05 (init burst) Waking pid 5
+[002992393] PID 05 (init burst) time slice expired, scheduling soon
+[002993041] PID 05 (init burst) Waking pid 5
+[002997612] PID 05 (init burst) time slice expired, scheduling soon
+[002998166] PID 05 (init burst) Waking pid 5
+[003002712] PID 05 (init burst) time slice expired, scheduling soon
+[003003308] PID 05 (init burst) Waking pid 5
+[003007856] PID 05 (init burst) time slice expired, scheduling soon
+[003008525] PID 05 (init burst) Waking pid 5
+[003013025] PID 05 (init burst) time slice expired, scheduling soon
+[003013797] PID 05 (init burst) Waking pid 5
+[003018268] PID 05 (init burst) time slice expired, scheduling soon
+[003018993] PID 05 (init burst) Waking pid 5
+[003023520] PID 05 (init burst) time slice expired, scheduling soon
+[003024243] PID 05 (init burst) Waking pid 5
+[003028811] PID 05 (init burst) time slice expired, scheduling soon
+[003029551] PID 05 (init burst) Waking pid 5
+[003034030] PID 05 (init burst) time slice expired, scheduling soon
+[003034675] PID 05 (init burst) Waking pid 5
+[003037218] PID 05 (init burst) syscall sleep(500000)
+[003037717] PID 05 (init burst) sleeping until 3537717
+$$ timeslice summary for pid 5 (init burst) : queued at 2982929, ran at 2982942, ended at 3038163
+=== schedule pid 0 (idle )
+*** timer woke pid 5
+[003541087] PID 00 (idle ) Waking pid 5
+=== schedule pid 5 (init burst)
+[003547005] PID 05 (init burst) time slice expired, scheduling soon
+[003547633] PID 05 (init burst) Waking pid 5
+[003552183] PID 05 (init burst) time slice expired, scheduling soon
+[003553611] PID 05 (init burst) Waking pid 5
+[003558216] PID 05 (init burst) time slice expired, scheduling soon
+[003558838] PID 05 (init burst) Waking pid 5
+[003563557] PID 05 (init burst) time slice expired, scheduling soon
+[003564173] PID 05 (init burst) Waking pid 5
+[003568665] PID 05 (init burst) time slice expired, scheduling soon
+[003569208] PID 05 (init burst) Waking pid 5
+[003573692] PID 05 (init burst) time slice expired, scheduling soon
+[003574279] PID 05 (init burst) Waking pid 5
+[003578821] PID 05 (init burst) time slice expired, scheduling soon
+[003579384] PID 05 (init burst) Waking pid 5
+[003583873] PID 05 (init burst) time slice expired, scheduling soon
+[003584992] PID 05 (init burst) Waking pid 5
+[003589619] PID 05 (init burst) time slice expired, scheduling soon
+[003590191] PID 05 (init burst) Waking pid 5
+[003594754] PID 05 (init burst) time slice expired, scheduling soon
+[003595312] PID 05 (init burst) Waking pid 5
+[003595905] PID 05 (init burst) syscall sleep(500000)
+[003596340] PID 05 (init burst) sleeping until 4096340
+$$ timeslice summary for pid 5 (init burst) : queued at 3542891, ran at 3542906, ended at 3596864
+=== schedule pid 0 (idle )
+*** timer woke pid 5
+[004099610] PID 00 (idle ) Waking pid 5
+=== schedule pid 5 (init burst)
+[004107165] PID 05 (init burst) time slice expired, scheduling soon
+[004109832] PID 05 (init burst) Waking pid 5
+[004116292] PID 05 (init burst) time slice expired, scheduling soon
+[004119324] PID 05 (init burst) Waking pid 5
+[004127688] PID 05 (init burst) time slice expired, scheduling soon
+[004130570] PID 05 (init burst) Waking pid 5
+[004136741] PID 05 (init burst) time slice expired, scheduling soon
+[004139630] PID 05 (init burst) Waking pid 5
+[004145751] PID 05 (init burst) time slice expired, scheduling soon
+[004148228] PID 05 (init burst) Waking pid 5
+[004154289] PID 05 (init burst) time slice expired, scheduling soon
+[004157378] PID 05 (init burst) Waking pid 5
+[004162553] PID 05 (init burst) time slice expired, scheduling soon
+[004163705] PID 05 (init burst) Waking pid 5
+[004168612] PID 05 (init burst) time slice expired, scheduling soon
+[004169495] PID 05 (init burst) Waking pid 5
+[004174319] PID 05 (init burst) time slice expired, scheduling soon
+[004175043] PID 05 (init burst) Waking pid 5
+[004179661] PID 05 (init burst) time slice expired, scheduling soon
+[004180378] PID 05 (init burst) Waking pid 5
+[004184925] PID 05 (init burst) time slice expired, scheduling soon
+[004185557] PID 05 (init burst) Waking pid 5
+[004190052] PID 05 (init burst) time slice expired, scheduling soon
+[004190601] PID 05 (init burst) Waking pid 5
+[004195130] PID 05 (init burst) time slice expired, scheduling soon
+[004195669] PID 05 (init burst) Waking pid 5
+[004200126] PID 05 (init burst) time slice expired, scheduling soon
+[004200702] PID 05 (init burst) Waking pid 5
+[004205332] PID 05 (init burst) time slice expired, scheduling soon
+[004205970] PID 05 (init burst) Waking pid 5
+[004208869] PID 05 (init burst) syscall sleep(500000)
+[004209334] PID 05 (init burst) sleeping until 4709334
+$$ timeslice summary for pid 5 (init burst) : queued at 4101464, ran at 4101478, ended at 4209779
+=== schedule pid 0 (idle )
+*** timer woke pid 5
+[004712211] PID 00 (idle ) Waking pid 5
+=== schedule pid 5 (init burst)
+[004718292] PID 05 (init burst) time slice expired, scheduling soon
+[004720799] PID 05 (init burst) Waking pid 5
+[004726178] PID 05 (init burst) time slice expired, scheduling soon
+[004726710] PID 05 (init burst) Waking pid 5
+[004731292] PID 05 (init burst) time slice expired, scheduling soon
+[004732646] PID 05 (init burst) Waking pid 5
+[004737263] PID 05 (init burst) time slice expired, scheduling soon
+[004737789] PID 05 (init burst) Waking pid 5
+[004742274] PID 05 (init burst) time slice expired, scheduling soon
+[004742791] PID 05 (init burst) Waking pid 5
+[004747301] PID 05 (init burst) time slice expired, scheduling soon
+[004748679] PID 05 (init burst) Waking pid 5
+[004753228] PID 05 (init burst) time slice expired, scheduling soon
+[004753806] PID 05 (init burst) Waking pid 5
+[004758380] PID 05 (init burst) time slice expired, scheduling soon
+[004758923] PID 05 (init burst) Waking pid 5
+[004763475] PID 05 (init burst) time slice expired, scheduling soon
+[004764906] PID 05 (init burst) Waking pid 5
+[004769408] PID 05 (init burst) time slice expired, scheduling soon
+[004769934] PID 05 (init burst) Waking pid 5
+[004771803] PID 05 (init burst) syscall sleep(500000)
+[004772238] PID 05 (init burst) sleeping until 5272238
+$$ timeslice summary for pid 5 (init burst) : queued at 4713404, ran at 4713416, ended at 4772774
+=== schedule pid 0 (idle )
+*** timer woke pid 5
+[005275504] PID 00 (idle ) Waking pid 5
+=== schedule pid 5 (init burst)
+[005281744] PID 05 (init burst) time slice expired, scheduling soon
+[005284697] PID 05 (init burst) Waking pid 5
+[005289420] PID 05 (init burst) time slice expired, scheduling soon
+[005290057] PID 05 (init burst) Waking pid 5
+[005294531] PID 05 (init burst) time slice expired, scheduling soon
+[005295180] PID 05 (init burst) Waking pid 5
+[005299704] PID 05 (init burst) time slice expired, scheduling soon
+[005300257] PID 05 (init burst) Waking pid 5
+[005304856] PID 05 (init burst) time slice expired, scheduling soon
+[005305502] PID 05 (init burst) Waking pid 5
+[005309993] PID 05 (init burst) time slice expired, scheduling soon
+[005310615] PID 05 (init burst) Waking pid 5
+[005315132] PID 05 (init burst) time slice expired, scheduling soon
+[005315803] PID 05 (init burst) Waking pid 5
+[005320301] PID 05 (init burst) time slice expired, scheduling soon
+[005320862] PID 05 (init burst) Waking pid 5
+[005325379] PID 05 (init burst) time slice expired, scheduling soon
+[005327273] PID 05 (init burst) Waking pid 5
+[005331896] PID 05 (init burst) time slice expired, scheduling soon
+[005332557] PID 05 (init burst) Waking pid 5
+[005336876] PID 05 (init burst) syscall sleep(500000)
+[005337432] PID 05 (init burst) sleeping until 5837432
+$$ timeslice summary for pid 5 (init burst) : queued at 5277258, ran at 5277272, ended at 5337871
+=== schedule pid 0 (idle )
+*** timer woke pid 5
+[005840929] PID 00 (idle ) Waking pid 5
+=== schedule pid 5 (init burst)
+[005846953] PID 05 (init burst) time slice expired, scheduling soon
+[005847527] PID 05 (init burst) Waking pid 5
+[005852147] PID 05 (init burst) time slice expired, scheduling soon
+[005852731] PID 05 (init burst) Waking pid 5
+[005857252] PID 05 (init burst) time slice expired, scheduling soon
+[005857830] PID 05 (init burst) Waking pid 5
+[005862360] PID 05 (init burst) time slice expired, scheduling soon
+[005862913] PID 05 (init burst) Waking pid 5
+[005867484] PID 05 (init burst) time slice expired, scheduling soon
+[005868077] PID 05 (init burst) Waking pid 5
+[005872663] PID 05 (init burst) time slice expired, scheduling soon
+[005873253] PID 05 (init burst) Waking pid 5
+[005879481] PID 05 (init burst) time slice expired, scheduling soon
+[005880003] PID 05 (init burst) Waking pid 5
+[005884509] PID 05 (init burst) time slice expired, scheduling soon
+[005885072] PID 05 (init burst) Waking pid 5
+[005889624] PID 05 (init burst) time slice expired, scheduling soon
+[005890172] PID 05 (init burst) Waking pid 5
+[005894639] PID 05 (init burst) time slice expired, scheduling soon
+[005895152] PID 05 (init burst) Waking pid 5
+[005896704] PID 05 (init burst) syscall sleep(500000)
+[005897138] PID 05 (init burst) sleeping until 6397138
+$$ timeslice summary for pid 5 (init burst) : queued at 5842829, ran at 5842842, ended at 5897577
+=== schedule pid 0 (idle )
+*** timer woke pid 5
+[006400420] PID 00 (idle ) Waking pid 5
+=== schedule pid 5 (init burst)
+[006407083] PID 05 (init burst) time slice expired, scheduling soon
+[006407726] PID 05 (init burst) Waking pid 5
+[006412321] PID 05 (init burst) time slice expired, scheduling soon
+[006412939] PID 05 (init burst) Waking pid 5
+[006417533] PID 05 (init burst) time slice expired, scheduling soon
+[006418181] PID 05 (init burst) Waking pid 5
+[006423752] PID 05 (init burst) time slice expired, scheduling soon
+[006424391] PID 05 (init burst) Waking pid 5
+[006428994] PID 05 (init burst) time slice expired, scheduling soon
+[006429595] PID 05 (init burst) Waking pid 5
+[006434082] PID 05 (init burst) time slice expired, scheduling soon
+[006434670] PID 05 (init burst) Waking pid 5
+[006439223] PID 05 (init burst) time slice expired, scheduling soon
+[006439866] PID 05 (init burst) Waking pid 5
+[006444426] PID 05 (init burst) time slice expired, scheduling soon
+[006445052] PID 05 (init burst) Waking pid 5
+[006449589] PID 05 (init burst) time slice expired, scheduling soon
+[006450157] PID 05 (init burst) Waking pid 5
+[006454682] PID 05 (init burst) time slice expired, scheduling soon
+[006456358] PID 05 (init burst) Waking pid 5
+[006457629] PID 05 (init burst) syscall sleep(500000)
+[006458215] PID 05 (init burst) sleeping until 6958215
+$$ timeslice summary for pid 5 (init burst) : queued at 6402296, ran at 6402312, ended at 6458648
+=== schedule pid 0 (idle )
+*** timer woke pid 5
+[006961398] PID 00 (idle ) Waking pid 5
+=== schedule pid 5 (init burst)
+[006964984] PID 05 (init burst) syscall exit()
+[006966147] PID 05 (init burst) thread stopped
+$$ timeslice summary for pid 5 (init burst) : queued at 6963143, ran at 6963156, ended at 6966592
+
+#### All Processes Stopped ####

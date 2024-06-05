@@ -1,0 +1,193 @@
+Booting OS...
+ * Detecting CPU
+ * Enabling A20
+ * E820 Memory Map
+ * System tables
+ * System time
+ * Reading GPT
+ * Initrd loaded
+ * Gzip compressed initrd
+ * Environment
+ * Parsing ELF64
+ * Screen VESA VBE
+========== Oink OS v1.1 ==========
+Waking pid 1
+=== schedule pid 1 (init init)
+[000778346] PID 01 (init init) syscall write(...)
+Priority scheduling test started
+[000778896] PID 01 (init init) syscall spawn("init", "high_priority_process")
+[000779274] PID 01 (init init) Waking pid 2
+[000779515] PID 01 (init init) Waking pid 1
+$$ timeslice summary for pid 1 (init init) : queued at 776846, ran at 776934, ended at 779498
+=== schedule pid 2 (init high_priority_process)
+[000781808] PID 02 (init high_priority_process) time slice expired, scheduling soon
+[000782151] PID 02 (init high_priority_process) Waking pid 2
+$$ timeslice summary for pid 2 (init high_priority_process) : queued at 779491, ran at 779498, ended at 782150
+=== schedule pid 1 (init init)
+[000782945] PID 01 (init init) syscall spawn("init", "medium_priority_process")
+[000783300] PID 01 (init init) Waking pid 3
+[000783501] PID 01 (init init) syscall spawn("init", "low_priority_process")
+[000783877] PID 01 (init init) Waking pid 4
+[000784125] PID 01 (init init) syscall exit()
+[000784361] PID 01 (init init) thread stopped
+$$ timeslice summary for pid 1 (init init) : queued at 779715, ran at 782150, ended at 786143
+=== schedule pid 2 (init high_priority_process)
+[000788692] PID 02 (init high_priority_process) time slice expired, scheduling soon
+[000789026] PID 02 (init high_priority_process) Waking pid 2
+$$ timeslice summary for pid 2 (init high_priority_process) : queued at 782393, ran at 786626, ended at 789026
+=== schedule pid 3 (init medium_priority_process)
+[000791324] PID 03 (init medium_priority_process) time slice expired, scheduling soon
+[000791638] PID 03 (init medium_priority_process) Waking pid 3
+$$ timeslice summary for pid 3 (init medium_priority_process) : queued at 783494, ran at 789026, ended at 791638
+=== schedule pid 4 (init low_priority_process)
+[000793936] PID 04 (init low_priority_process) time slice expired, scheduling soon
+[000794250] PID 04 (init low_priority_process) Waking pid 4
+$$ timeslice summary for pid 4 (init low_priority_process) : queued at 784071, ran at 791638, ended at 794250
+=== schedule pid 2 (init high_priority_process)
+[000796525] PID 02 (init high_priority_process) time slice expired, scheduling soon
+[000796828] PID 02 (init high_priority_process) Waking pid 2
+$$ timeslice summary for pid 2 (init high_priority_process) : queued at 789271, ran at 794250, ended at 796828
+=== schedule pid 3 (init medium_priority_process)
+[000799095] PID 03 (init medium_priority_process) time slice expired, scheduling soon
+[000799403] PID 03 (init medium_priority_process) Waking pid 3
+$$ timeslice summary for pid 3 (init medium_priority_process) : queued at 791897, ran at 796828, ended at 799403
+=== schedule pid 4 (init low_priority_process)
+[000801978] PID 04 (init low_priority_process) time slice expired, scheduling soon
+[000802505] PID 04 (init low_priority_process) Waking pid 4
+$$ timeslice summary for pid 4 (init low_priority_process) : queued at 794488, ran at 799403, ended at 802505
+=== schedule pid 2 (init high_priority_process)
+[000804774] PID 02 (init high_priority_process) time slice expired, scheduling soon
+[000805091] PID 02 (init high_priority_process) Waking pid 2
+$$ timeslice summary for pid 2 (init high_priority_process) : queued at 797065, ran at 802505, ended at 805090
+=== schedule pid 3 (init medium_priority_process)
+[000807373] PID 03 (init medium_priority_process) time slice expired, scheduling soon
+[000807678] PID 03 (init medium_priority_process) Waking pid 3
+$$ timeslice summary for pid 3 (init medium_priority_process) : queued at 799649, ran at 805090, ended at 807678
+=== schedule pid 4 (init low_priority_process)
+[000809964] PID 04 (init low_priority_process) time slice expired, scheduling soon
+[000810260] PID 04 (init low_priority_process) Waking pid 4
+$$ timeslice summary for pid 4 (init low_priority_process) : queued at 802741, ran at 807678, ended at 810260
+=== schedule pid 2 (init high_priority_process)
+[000812538] PID 02 (init high_priority_process) time slice expired, scheduling soon
+[000812838] PID 02 (init high_priority_process) Waking pid 2
+$$ timeslice summary for pid 2 (init high_priority_process) : queued at 805334, ran at 810260, ended at 812838
+=== schedule pid 3 (init medium_priority_process)
+[000815108] PID 03 (init medium_priority_process) time slice expired, scheduling soon
+[000815431] PID 03 (init medium_priority_process) Waking pid 3
+$$ timeslice summary for pid 3 (init medium_priority_process) : queued at 807922, ran at 812838, ended at 815431
+=== schedule pid 4 (init low_priority_process)
+[000818738] PID 04 (init low_priority_process) time slice expired, scheduling soon
+[000819073] PID 04 (init low_priority_process) Waking pid 4
+$$ timeslice summary for pid 4 (init low_priority_process) : queued at 810498, ran at 815431, ended at 819073
+=== schedule pid 2 (init high_priority_process)
+[000821335] PID 02 (init high_priority_process) time slice expired, scheduling soon
+[000821673] PID 02 (init high_priority_process) Waking pid 2
+$$ timeslice summary for pid 2 (init high_priority_process) : queued at 813077, ran at 819073, ended at 821673
+=== schedule pid 3 (init medium_priority_process)
+[000823945] PID 03 (init medium_priority_process) time slice expired, scheduling soon
+[000824255] PID 03 (init medium_priority_process) Waking pid 3
+$$ timeslice summary for pid 3 (init medium_priority_process) : queued at 815674, ran at 821673, ended at 824255
+=== schedule pid 4 (init low_priority_process)
+[000826549] PID 04 (init low_priority_process) time slice expired, scheduling soon
+[000826862] PID 04 (init low_priority_process) Waking pid 4
+$$ timeslice summary for pid 4 (init low_priority_process) : queued at 819309, ran at 824255, ended at 826862
+=== schedule pid 2 (init high_priority_process)
+[000829120] PID 02 (init high_priority_process) time slice expired, scheduling soon
+[000829424] PID 02 (init high_priority_process) Waking pid 2
+$$ timeslice summary for pid 2 (init high_priority_process) : queued at 821914, ran at 826862, ended at 829423
+=== schedule pid 3 (init medium_priority_process)
+[000831690] PID 03 (init medium_priority_process) time slice expired, scheduling soon
+[000831992] PID 03 (init medium_priority_process) Waking pid 3
+$$ timeslice summary for pid 3 (init medium_priority_process) : queued at 824519, ran at 829423, ended at 831992
+=== schedule pid 4 (init low_priority_process)
+[000834979] PID 04 (init low_priority_process) time slice expired, scheduling soon
+[000835277] PID 04 (init low_priority_process) Waking pid 4
+$$ timeslice summary for pid 4 (init low_priority_process) : queued at 827096, ran at 831992, ended at 835277
+=== schedule pid 2 (init high_priority_process)
+[000837547] PID 02 (init high_priority_process) time slice expired, scheduling soon
+[000837907] PID 02 (init high_priority_process) Waking pid 2
+$$ timeslice summary for pid 2 (init high_priority_process) : queued at 829664, ran at 835277, ended at 837907
+=== schedule pid 3 (init medium_priority_process)
+[000840195] PID 03 (init medium_priority_process) time slice expired, scheduling soon
+[000840502] PID 03 (init medium_priority_process) Waking pid 3
+$$ timeslice summary for pid 3 (init medium_priority_process) : queued at 832238, ran at 837907, ended at 840502
+=== schedule pid 4 (init low_priority_process)
+[000842783] PID 04 (init low_priority_process) time slice expired, scheduling soon
+[000843081] PID 04 (init low_priority_process) Waking pid 4
+$$ timeslice summary for pid 4 (init low_priority_process) : queued at 835517, ran at 840502, ended at 843080
+=== schedule pid 2 (init high_priority_process)
+[000845349] PID 02 (init high_priority_process) time slice expired, scheduling soon
+[000845649] PID 02 (init high_priority_process) Waking pid 2
+$$ timeslice summary for pid 2 (init high_priority_process) : queued at 838148, ran at 843080, ended at 845649
+=== schedule pid 3 (init medium_priority_process)
+[000847917] PID 03 (init medium_priority_process) time slice expired, scheduling soon
+[000848238] PID 03 (init medium_priority_process) Waking pid 3
+$$ timeslice summary for pid 3 (init medium_priority_process) : queued at 840745, ran at 845649, ended at 848238
+=== schedule pid 4 (init low_priority_process)
+[000850504] PID 04 (init low_priority_process) time slice expired, scheduling soon
+[000851701] PID 04 (init low_priority_process) Waking pid 4
+$$ timeslice summary for pid 4 (init low_priority_process) : queued at 843316, ran at 848238, ended at 851701
+=== schedule pid 2 (init high_priority_process)
+[000853956] PID 02 (init high_priority_process) time slice expired, scheduling soon
+[000854274] PID 02 (init high_priority_process) Waking pid 2
+$$ timeslice summary for pid 2 (init high_priority_process) : queued at 845886, ran at 851701, ended at 854274
+=== schedule pid 3 (init medium_priority_process)
+[000856562] PID 03 (init medium_priority_process) time slice expired, scheduling soon
+[000856867] PID 03 (init medium_priority_process) Waking pid 3
+$$ timeslice summary for pid 3 (init medium_priority_process) : queued at 848485, ran at 854274, ended at 856867
+=== schedule pid 4 (init low_priority_process)
+[000859156] PID 04 (init low_priority_process) time slice expired, scheduling soon
+[000859471] PID 04 (init low_priority_process) Waking pid 4
+$$ timeslice summary for pid 4 (init low_priority_process) : queued at 851937, ran at 856867, ended at 859471
+=== schedule pid 2 (init high_priority_process)
+[000861742] PID 02 (init high_priority_process) time slice expired, scheduling soon
+[000862041] PID 02 (init high_priority_process) Waking pid 2
+$$ timeslice summary for pid 2 (init high_priority_process) : queued at 854515, ran at 859471, ended at 862041
+=== schedule pid 3 (init medium_priority_process)
+[000864309] PID 03 (init medium_priority_process) time slice expired, scheduling soon
+[000864615] PID 03 (init medium_priority_process) Waking pid 3
+$$ timeslice summary for pid 3 (init medium_priority_process) : queued at 857122, ran at 862041, ended at 864615
+=== schedule pid 4 (init low_priority_process)
+[000866890] PID 04 (init low_priority_process) time slice expired, scheduling soon
+[000867213] PID 04 (init low_priority_process) Waking pid 4
+$$ timeslice summary for pid 4 (init low_priority_process) : queued at 859707, ran at 864615, ended at 867213
+=== schedule pid 2 (init high_priority_process)
+[000869481] PID 02 (init high_priority_process) time slice expired, scheduling soon
+[000869818] PID 02 (init high_priority_process) Waking pid 2
+$$ timeslice summary for pid 2 (init high_priority_process) : queued at 862281, ran at 867213, ended at 869817
+=== schedule pid 3 (init medium_priority_process)
+[000872091] PID 03 (init medium_priority_process) time slice expired, scheduling soon
+[000872430] PID 03 (init medium_priority_process) Waking pid 3
+$$ timeslice summary for pid 3 (init medium_priority_process) : queued at 864859, ran at 869817, ended at 872430
+=== schedule pid 4 (init low_priority_process)
+[000874728] PID 04 (init low_priority_process) time slice expired, scheduling soon
+[000875030] PID 04 (init low_priority_process) Waking pid 4
+$$ timeslice summary for pid 4 (init low_priority_process) : queued at 867451, ran at 872430, ended at 875030
+=== schedule pid 2 (init high_priority_process)
+[000877293] PID 02 (init high_priority_process) time slice expired, scheduling soon
+[000877601] PID 02 (init high_priority_process) Waking pid 2
+$$ timeslice summary for pid 2 (init high_priority_process) : queued at 870060, ran at 875030, ended at 877601
+=== schedule pid 3 (init medium_priority_process)
+[000879867] PID 03 (init medium_priority_process) time slice expired, scheduling soon
+[000880188] PID 03 (init medium_priority_process) Waking pid 3
+$$ timeslice summary for pid 3 (init medium_priority_process) : queued at 872699, ran at 877601, ended at 880188
+=== schedule pid 4 (init low_priority_process)
+[000881244] PID 04 (init low_priority_process) syscall write(...)
+Low priority process completed
+[000881717] PID 04 (init low_priority_process) syscall exit()
+[000881974] PID 04 (init low_priority_process) thread stopped
+$$ timeslice summary for pid 4 (init low_priority_process) : queued at 875269, ran at 880188, ended at 882216
+=== schedule pid 2 (init high_priority_process)
+[000883146] PID 02 (init high_priority_process) syscall write(...)
+High priority process completed
+[000883620] PID 02 (init high_priority_process) syscall exit()
+[000883886] PID 02 (init high_priority_process) thread stopped
+$$ timeslice summary for pid 2 (init high_priority_process) : queued at 877843, ran at 882626, ended at 884130
+=== schedule pid 3 (init medium_priority_process)
+[000886706] PID 03 (init medium_priority_process) syscall write(...)
+Medium priority process completed
+[000887187] PID 03 (init medium_priority_process) syscall exit()
+[000887489] PID 03 (init medium_priority_process) thread stopped
+$$ timeslice summary for pid 3 (init medium_priority_process) : queued at 880432, ran at 885275, ended at 887746
+
+#### All Processes Stopped ####

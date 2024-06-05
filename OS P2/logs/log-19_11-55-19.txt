@@ -1,0 +1,19 @@
+Booting OS...
+ * Detecting CPU
+ * Enabling A20
+ * E820 Memory Map
+ * System tables
+ * System time
+ * Reading GPT
+ * Initrd loaded
+ * Gzip compressed initrd
+ * Environment
+ * Parsing ELF64
+ * Screen VESA VBE
+========== Oink OS v1.1 ==========
+Waking pid 1
+=== schedule pid 1 (init init)
+[000767019] PID 01 (init init) syscall write(...)
+Priority scheduling test started
+[000767636] PID 01 (init init) time slice expired, scheduling soon
+[000768014] PID 01 (init init) Waking pid 1

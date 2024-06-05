@@ -1,0 +1,316 @@
+Booting OS...
+ * Detecting CPU
+ * Enabling A20
+ * E820 Memory Map
+ * System tables
+ * System time
+ * Reading GPT
+ * Initrd loaded
+ * Gzip compressed initrd
+ * Environment
+ * Parsing ELF64
+ * Screen VESA VBE
+========== Oink OS v1.1 ==========
+Waking pid 1
+=== schedule pid 1 (init init)
+[000828394] PID 01 (init init) syscall write(...)
+I am init
+[000829173] PID 01 (init init) syscall spawn("init", "long_running")
+[000829828] PID 01 (init init) Waking pid 2
+[000830287] PID 01 (init init) Waking pid 1
+$$ timeslice summary for pid 1 (init init) : queued at 826587, ran at 826682, ended at 830270
+=== schedule pid 2 (init long_running)
+[000832224] PID 02 (init long_running) syscall sleep(100000)
+[000832757] PID 02 (init long_running) sleeping until 932738
+$$ timeslice summary for pid 2 (init long_running) : queued at 830261, ran at 830270, ended at 833283
+=== schedule pid 1 (init init)
+[000834321] PID 01 (init init) syscall spawn("init", "short_running")
+[000834990] PID 01 (init init) Waking pid 3
+[000838092] PID 01 (init init) Waking pid 1
+$$ timeslice summary for pid 1 (init init) : queued at 830675, ran at 833283, ended at 838090
+=== schedule pid 3 (init short_running)
+[000840497] PID 03 (init short_running) syscall sleep(300000)
+[000841065] PID 03 (init short_running) sleeping until 1141064
+$$ timeslice summary for pid 3 (init short_running) : queued at 838085, ran at 838090, ended at 841621
+=== schedule pid 1 (init init)
+[000842816] PID 01 (init init) syscall exit()
+[000843277] PID 01 (init init) thread stopped
+$$ timeslice summary for pid 1 (init init) : queued at 838588, ran at 841621, ended at 843794
+=== schedule pid 0 (idle )
+*** timer woke pid 2
+[000933538] PID 00 (idle ) Waking pid 2
+=== schedule pid 2 (init long_running)
+[000938065] PID 02 (init long_running) time slice expired, scheduling soon
+[000938759] PID 02 (init long_running) Waking pid 2
+[000943365] PID 02 (init long_running) time slice expired, scheduling soon
+[000944089] PID 02 (init long_running) Waking pid 2
+[000948654] PID 02 (init long_running) time slice expired, scheduling soon
+[000949211] PID 02 (init long_running) Waking pid 2
+[000953788] PID 02 (init long_running) time slice expired, scheduling soon
+[000954378] PID 02 (init long_running) Waking pid 2
+[000958884] PID 02 (init long_running) time slice expired, scheduling soon
+[000959587] PID 02 (init long_running) Waking pid 2
+[000964147] PID 02 (init long_running) time slice expired, scheduling soon
+[000964779] PID 02 (init long_running) Waking pid 2
+[000969270] PID 02 (init long_running) time slice expired, scheduling soon
+[000969829] PID 02 (init long_running) Waking pid 2
+[000974878] PID 02 (init long_running) time slice expired, scheduling soon
+[000975475] PID 02 (init long_running) Waking pid 2
+[000980013] PID 02 (init long_running) time slice expired, scheduling soon
+[000980642] PID 02 (init long_running) Waking pid 2
+[000985155] PID 02 (init long_running) time slice expired, scheduling soon
+[000985777] PID 02 (init long_running) Waking pid 2
+[000991612] PID 02 (init long_running) time slice expired, scheduling soon
+[000992218] PID 02 (init long_running) Waking pid 2
+[000996771] PID 02 (init long_running) time slice expired, scheduling soon
+[000997341] PID 02 (init long_running) Waking pid 2
+[001001857] PID 02 (init long_running) time slice expired, scheduling soon
+[001002473] PID 02 (init long_running) Waking pid 2
+[001006966] PID 02 (init long_running) time slice expired, scheduling soon
+[001007647] PID 02 (init long_running) Waking pid 2
+[001013105] PID 02 (init long_running) time slice expired, scheduling soon
+[001013678] PID 02 (init long_running) Waking pid 2
+[001018164] PID 02 (init long_running) time slice expired, scheduling soon
+[001018719] PID 02 (init long_running) Waking pid 2
+[001023257] PID 02 (init long_running) time slice expired, scheduling soon
+[001023920] PID 02 (init long_running) Waking pid 2
+[001028524] PID 02 (init long_running) time slice expired, scheduling soon
+[001029181] PID 02 (init long_running) Waking pid 2
+[001033716] PID 02 (init long_running) time slice expired, scheduling soon
+[001034304] PID 02 (init long_running) Waking pid 2
+[001039027] PID 02 (init long_running) time slice expired, scheduling soon
+[001039634] PID 02 (init long_running) Waking pid 2
+[001044187] PID 02 (init long_running) time slice expired, scheduling soon
+[001044832] PID 02 (init long_running) Waking pid 2
+[001049382] PID 02 (init long_running) time slice expired, scheduling soon
+[001050005] PID 02 (init long_running) Waking pid 2
+[001055016] PID 02 (init long_running) time slice expired, scheduling soon
+[001055638] PID 02 (init long_running) Waking pid 2
+[001060203] PID 02 (init long_running) time slice expired, scheduling soon
+[001060794] PID 02 (init long_running) Waking pid 2
+[001065328] PID 02 (init long_running) time slice expired, scheduling soon
+[001065961] PID 02 (init long_running) Waking pid 2
+[001070984] PID 02 (init long_running) time slice expired, scheduling soon
+[001071640] PID 02 (init long_running) Waking pid 2
+[001076227] PID 02 (init long_running) time slice expired, scheduling soon
+[001076829] PID 02 (init long_running) Waking pid 2
+[001081365] PID 02 (init long_running) time slice expired, scheduling soon
+[001081928] PID 02 (init long_running) Waking pid 2
+[001086493] PID 02 (init long_running) time slice expired, scheduling soon
+[001087124] PID 02 (init long_running) Waking pid 2
+[001091664] PID 02 (init long_running) time slice expired, scheduling soon
+[001092327] PID 02 (init long_running) Waking pid 2
+[001096898] PID 02 (init long_running) time slice expired, scheduling soon
+[001097475] PID 02 (init long_running) Waking pid 2
+[001102001] PID 02 (init long_running) time slice expired, scheduling soon
+[001103203] PID 02 (init long_running) Waking pid 2
+[001107823] PID 02 (init long_running) time slice expired, scheduling soon
+[001108472] PID 02 (init long_running) Waking pid 2
+[001113009] PID 02 (init long_running) time slice expired, scheduling soon
+[001113634] PID 02 (init long_running) Waking pid 2
+[001118135] PID 02 (init long_running) time slice expired, scheduling soon
+[001118742] PID 02 (init long_running) Waking pid 2
+[001123291] PID 02 (init long_running) time slice expired, scheduling soon
+[001123899] PID 02 (init long_running) Waking pid 2
+[001128464] PID 02 (init long_running) time slice expired, scheduling soon
+[001129113] PID 02 (init long_running) Waking pid 2
+[001133656] PID 02 (init long_running) time slice expired, scheduling soon
+[001134282] PID 02 (init long_running) Waking pid 2
+[001138945] PID 02 (init long_running) time slice expired, scheduling soon
+[001139547] PID 02 (init long_running) Waking pid 2
+*** timer woke pid 3
+[001141433] PID 02 (init long_running) Waking pid 3
+[001141910] PID 02 (init long_running) Waking pid 2
+$$ timeslice summary for pid 2 (init long_running) : queued at 933912, ran at 933929, ended at 1141910
+=== schedule pid 3 (init short_running)
+[001146513] PID 03 (init short_running) time slice expired, scheduling soon
+[001147102] PID 03 (init short_running) Waking pid 3
+$$ timeslice summary for pid 3 (init short_running) : queued at 1141874, ran at 1141910, ended at 1147101
+=== schedule pid 2 (init long_running)
+[001151602] PID 02 (init long_running) time slice expired, scheduling soon
+[001153058] PID 02 (init long_running) Waking pid 2
+$$ timeslice summary for pid 2 (init long_running) : queued at 1142425, ran at 1147101, ended at 1153057
+=== schedule pid 3 (init short_running)
+[001157747] PID 03 (init short_running) time slice expired, scheduling soon
+[001158365] PID 03 (init short_running) Waking pid 3
+$$ timeslice summary for pid 3 (init short_running) : queued at 1147536, ran at 1153057, ended at 1158365
+=== schedule pid 2 (init long_running)
+[001162890] PID 02 (init long_running) time slice expired, scheduling soon
+[001163462] PID 02 (init long_running) Waking pid 2
+$$ timeslice summary for pid 2 (init long_running) : queued at 1153595, ran at 1158365, ended at 1163462
+=== schedule pid 3 (init short_running)
+[001167982] PID 03 (init short_running) time slice expired, scheduling soon
+[001169432] PID 03 (init short_running) Waking pid 3
+$$ timeslice summary for pid 3 (init short_running) : queued at 1158798, ran at 1163462, ended at 1169431
+=== schedule pid 2 (init long_running)
+[001174032] PID 02 (init long_running) time slice expired, scheduling soon
+[001174617] PID 02 (init long_running) Waking pid 2
+$$ timeslice summary for pid 2 (init long_running) : queued at 1163946, ran at 1169431, ended at 1174617
+=== schedule pid 3 (init short_running)
+[001179186] PID 03 (init short_running) time slice expired, scheduling soon
+[001179765] PID 03 (init short_running) Waking pid 3
+$$ timeslice summary for pid 3 (init short_running) : queued at 1169896, ran at 1174617, ended at 1179765
+=== schedule pid 2 (init long_running)
+[001184270] PID 02 (init long_running) time slice expired, scheduling soon
+[001184869] PID 02 (init long_running) Waking pid 2
+$$ timeslice summary for pid 2 (init long_running) : queued at 1175102, ran at 1179765, ended at 1184868
+=== schedule pid 3 (init short_running)
+[001190138] PID 03 (init short_running) time slice expired, scheduling soon
+[001190725] PID 03 (init short_running) Waking pid 3
+$$ timeslice summary for pid 3 (init short_running) : queued at 1180191, ran at 1184868, ended at 1190724
+=== schedule pid 2 (init long_running)
+[001195263] PID 02 (init long_running) time slice expired, scheduling soon
+[001195844] PID 02 (init long_running) Waking pid 2
+$$ timeslice summary for pid 2 (init long_running) : queued at 1185360, ran at 1190724, ended at 1195843
+=== schedule pid 3 (init short_running)
+[001200392] PID 03 (init short_running) time slice expired, scheduling soon
+[001200968] PID 03 (init short_running) Waking pid 3
+$$ timeslice summary for pid 3 (init short_running) : queued at 1191153, ran at 1195843, ended at 1200968
+=== schedule pid 2 (init long_running)
+[001205538] PID 02 (init long_running) time slice expired, scheduling soon
+[001206122] PID 02 (init long_running) Waking pid 2
+$$ timeslice summary for pid 2 (init long_running) : queued at 1196335, ran at 1200968, ended at 1206122
+=== schedule pid 3 (init short_running)
+[001210785] PID 03 (init short_running) time slice expired, scheduling soon
+[001211386] PID 03 (init short_running) Waking pid 3
+$$ timeslice summary for pid 3 (init short_running) : queued at 1201428, ran at 1206122, ended at 1211385
+=== schedule pid 2 (init long_running)
+[001215894] PID 02 (init long_running) time slice expired, scheduling soon
+[001216476] PID 02 (init long_running) Waking pid 2
+$$ timeslice summary for pid 2 (init long_running) : queued at 1206646, ran at 1211385, ended at 1216475
+=== schedule pid 3 (init short_running)
+[001221098] PID 03 (init short_running) time slice expired, scheduling soon
+[001221722] PID 03 (init short_running) Waking pid 3
+$$ timeslice summary for pid 3 (init short_running) : queued at 1211835, ran at 1216475, ended at 1221721
+=== schedule pid 2 (init long_running)
+[001227792] PID 02 (init long_running) time slice expired, scheduling soon
+[001228390] PID 02 (init long_running) Waking pid 2
+$$ timeslice summary for pid 2 (init long_running) : queued at 1216967, ran at 1221721, ended at 1228389
+=== schedule pid 3 (init short_running)
+[001235341] PID 03 (init short_running) time slice expired, scheduling soon
+[001235937] PID 03 (init short_running) Waking pid 3
+$$ timeslice summary for pid 3 (init short_running) : queued at 1222169, ran at 1228389, ended at 1235936
+=== schedule pid 2 (init long_running)
+[001241600] PID 02 (init long_running) time slice expired, scheduling soon
+[001242210] PID 02 (init long_running) Waking pid 2
+$$ timeslice summary for pid 2 (init long_running) : queued at 1228897, ran at 1235936, ended at 1242209
+=== schedule pid 3 (init short_running)
+[001248426] PID 03 (init short_running) time slice expired, scheduling soon
+[001249061] PID 03 (init short_running) Waking pid 3
+$$ timeslice summary for pid 3 (init short_running) : queued at 1236376, ran at 1242209, ended at 1249060
+=== schedule pid 2 (init long_running)
+[001255299] PID 02 (init long_running) time slice expired, scheduling soon
+[001255929] PID 02 (init long_running) Waking pid 2
+$$ timeslice summary for pid 2 (init long_running) : queued at 1242733, ran at 1249060, ended at 1255928
+=== schedule pid 3 (init short_running)
+[001260591] PID 03 (init short_running) time slice expired, scheduling soon
+[001261183] PID 03 (init short_running) Waking pid 3
+$$ timeslice summary for pid 3 (init short_running) : queued at 1249549, ran at 1255928, ended at 1261182
+=== schedule pid 2 (init long_running)
+[001274703] PID 02 (init long_running) time slice expired, scheduling soon
+[001275319] PID 02 (init long_running) Waking pid 2
+$$ timeslice summary for pid 2 (init long_running) : queued at 1256438, ran at 1261182, ended at 1275318
+=== schedule pid 3 (init short_running)
+[001279952] PID 03 (init short_running) time slice expired, scheduling soon
+[001280518] PID 03 (init short_running) Waking pid 3
+$$ timeslice summary for pid 3 (init short_running) : queued at 1261640, ran at 1275318, ended at 1280518
+=== schedule pid 2 (init long_running)
+[001284993] PID 02 (init long_running) time slice expired, scheduling soon
+[001285556] PID 02 (init long_running) Waking pid 2
+$$ timeslice summary for pid 2 (init long_running) : queued at 1275844, ran at 1280518, ended at 1285556
+=== schedule pid 3 (init short_running)
+[001288825] PID 03 (init short_running) syscall exit()
+[001289314] PID 03 (init short_running) thread stopped
+$$ timeslice summary for pid 3 (init short_running) : queued at 1280952, ran at 1285556, ended at 1289795
+=== schedule pid 2 (init long_running)
+[001294751] PID 02 (init long_running) time slice expired, scheduling soon
+[001295317] PID 02 (init long_running) Waking pid 2
+[001299869] PID 02 (init long_running) time slice expired, scheduling soon
+[001300420] PID 02 (init long_running) Waking pid 2
+[001304971] PID 02 (init long_running) time slice expired, scheduling soon
+[001306164] PID 02 (init long_running) Waking pid 2
+[001310751] PID 02 (init long_running) time slice expired, scheduling soon
+[001311328] PID 02 (init long_running) Waking pid 2
+[001315824] PID 02 (init long_running) time slice expired, scheduling soon
+[001316381] PID 02 (init long_running) Waking pid 2
+[001320988] PID 02 (init long_running) time slice expired, scheduling soon
+[001321582] PID 02 (init long_running) Waking pid 2
+[001326408] PID 02 (init long_running) time slice expired, scheduling soon
+[001326975] PID 02 (init long_running) Waking pid 2
+[001331485] PID 02 (init long_running) time slice expired, scheduling soon
+[001332038] PID 02 (init long_running) Waking pid 2
+[001336544] PID 02 (init long_running) time slice expired, scheduling soon
+[001337137] PID 02 (init long_running) Waking pid 2
+[001341779] PID 02 (init long_running) time slice expired, scheduling soon
+[001342356] PID 02 (init long_running) Waking pid 2
+[001346965] PID 02 (init long_running) time slice expired, scheduling soon
+[001347532] PID 02 (init long_running) Waking pid 2
+[001351992] PID 02 (init long_running) time slice expired, scheduling soon
+[001353162] PID 02 (init long_running) Waking pid 2
+[001357752] PID 02 (init long_running) time slice expired, scheduling soon
+[001358383] PID 02 (init long_running) Waking pid 2
+[001363001] PID 02 (init long_running) time slice expired, scheduling soon
+[001363576] PID 02 (init long_running) Waking pid 2
+[001368089] PID 02 (init long_running) time slice expired, scheduling soon
+[001368646] PID 02 (init long_running) Waking pid 2
+[001373177] PID 02 (init long_running) time slice expired, scheduling soon
+[001373762] PID 02 (init long_running) Waking pid 2
+[001378308] PID 02 (init long_running) time slice expired, scheduling soon
+[001378873] PID 02 (init long_running) Waking pid 2
+[001383397] PID 02 (init long_running) time slice expired, scheduling soon
+[001383958] PID 02 (init long_running) Waking pid 2
+[001388534] PID 02 (init long_running) time slice expired, scheduling soon
+[001389126] PID 02 (init long_running) Waking pid 2
+[001393692] PID 02 (init long_running) time slice expired, scheduling soon
+[001394266] PID 02 (init long_running) Waking pid 2
+[001398785] PID 02 (init long_running) time slice expired, scheduling soon
+[001399364] PID 02 (init long_running) Waking pid 2
+[001403945] PID 02 (init long_running) time slice expired, scheduling soon
+[001404545] PID 02 (init long_running) Waking pid 2
+[001409150] PID 02 (init long_running) time slice expired, scheduling soon
+[001409724] PID 02 (init long_running) Waking pid 2
+[001414215] PID 02 (init long_running) time slice expired, scheduling soon
+[001414768] PID 02 (init long_running) Waking pid 2
+[001419231] PID 02 (init long_running) time slice expired, scheduling soon
+[001420582] PID 02 (init long_running) Waking pid 2
+[001425249] PID 02 (init long_running) time slice expired, scheduling soon
+[001425838] PID 02 (init long_running) Waking pid 2
+[001430409] PID 02 (init long_running) time slice expired, scheduling soon
+[001430966] PID 02 (init long_running) Waking pid 2
+[001435480] PID 02 (init long_running) time slice expired, scheduling soon
+[001436068] PID 02 (init long_running) Waking pid 2
+[001441300] PID 02 (init long_running) time slice expired, scheduling soon
+[001441868] PID 02 (init long_running) Waking pid 2
+[001446427] PID 02 (init long_running) time slice expired, scheduling soon
+[001446988] PID 02 (init long_running) Waking pid 2
+[001451590] PID 02 (init long_running) time slice expired, scheduling soon
+[001452148] PID 02 (init long_running) Waking pid 2
+[001456763] PID 02 (init long_running) time slice expired, scheduling soon
+[001457349] PID 02 (init long_running) Waking pid 2
+[001461882] PID 02 (init long_running) time slice expired, scheduling soon
+[001462454] PID 02 (init long_running) Waking pid 2
+[001466991] PID 02 (init long_running) time slice expired, scheduling soon
+[001467547] PID 02 (init long_running) Waking pid 2
+[001472104] PID 02 (init long_running) time slice expired, scheduling soon
+[001472706] PID 02 (init long_running) Waking pid 2
+[001477238] PID 02 (init long_running) time slice expired, scheduling soon
+[001477803] PID 02 (init long_running) Waking pid 2
+[001482337] PID 02 (init long_running) time slice expired, scheduling soon
+[001482895] PID 02 (init long_running) Waking pid 2
+[001487456] PID 02 (init long_running) time slice expired, scheduling soon
+[001488055] PID 02 (init long_running) Waking pid 2
+[001492719] PID 02 (init long_running) time slice expired, scheduling soon
+[001493343] PID 02 (init long_running) Waking pid 2
+[001497841] PID 02 (init long_running) time slice expired, scheduling soon
+[001498403] PID 02 (init long_running) Waking pid 2
+[001502890] PID 02 (init long_running) time slice expired, scheduling soon
+[001504846] PID 02 (init long_running) Waking pid 2
+[001509495] PID 02 (init long_running) time slice expired, scheduling soon
+[001510071] PID 02 (init long_running) Waking pid 2
+[001514607] PID 02 (init long_running) time slice expired, scheduling soon
+[001515171] PID 02 (init long_running) Waking pid 2
+[001519361] PID 02 (init long_running) syscall exit()
+[001519819] PID 02 (init long_running) thread stopped
+$$ timeslice summary for pid 2 (init long_running) : queued at 1286050, ran at 1290664, ended at 1520908
+
+#### All Processes Stopped ####

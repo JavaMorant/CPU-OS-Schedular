@@ -1,0 +1,18 @@
+Booting OS...
+ * Detecting CPU
+ * Enabling A20
+ * E820 Memory Map
+ * System tables
+ * System time
+ * Reading GPT
+ * Initrd loaded
+ * Gzip compressed initrd
+ * Environment
+ * Parsing ELF64
+ * Screen VESA VBE
+========== Oink OS v1.1 ==========
+Waking pid 1
+
+### ERROR: going idle when there are tasks to run ###
+
+Crashed. Use Ctrl-C or "Ctrl-A X" at the terminal to stop.

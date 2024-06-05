@@ -1,0 +1,8 @@
+- Create own scenario files
+- Start report
+- Check if schedular works as intended
+- The analysis should always be in service of answering relevant questions about scheduler behaviour,
+for example: are there cases where your algorithm starves some tasks of CPU time? How does it
+balance interactive and batch tasks? What are the pathological scenarios? Marks for this part are
+awarded for non-trivial, well-evidenced analysis in service of relevant and informative conclusions.
+The code quality of analysis scripts is not being assessed.
